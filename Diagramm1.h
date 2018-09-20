@@ -28,9 +28,6 @@ public:
   {
     InitializeComponent();
 
-    //      m_pChartArea = chart1->ChartAreas[0];
-    //      m_pChartArea->AxisX->Title = "Zeit";
-
     m_hasDate = true;
     m_hasTime = true;
 
@@ -527,7 +524,7 @@ private: RectangleF InnerPlotPositionClientRectangle(Chart ^chart, ChartArea ^CA
 
 private: System::Void performZoom(int nDelta, double fPos)
 {
-  if (!chart1->ChartAreas[0]->AxisX->ScaleView->Zoomable)
+  if (!chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->Zoomable)
     return;
 
   // Calculate a temporaray zoom level from the delta, limit downwards to 0
@@ -566,14 +563,10 @@ private: System::Void performZoom(int nDelta, double fPos)
   }
 }
 
-private: System::Void performPan(int nDelta)
+private: System::Void performPan(int nDelta, double fMin, double fMax)
 {
-  if (!chart1->ChartAreas[0]->AxisX->ScaleView->Zoomable)
+  if (!chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->Zoomable)
     return;
-
-  // Get the currently visible range from the chart
-  double fMin = chart1->ChartAreas[0]->AxisX->ScaleView->ViewMinimum;
-  double fMax = chart1->ChartAreas[0]->AxisX->ScaleView->ViewMaximum;
 
   // Calculate the proposed movement (currently 10% of the range per nDelta fraction)
   double fOffset = (fMax - fMin) * nDelta / 120 * 0.1;
@@ -595,7 +588,10 @@ private: System::Void performPan(int nDelta)
   }
 
   // Apply the calculated limits
-  chart1->ChartAreas[0]->AxisX->ScaleView->Zoom(fMinNew, fMaxNew);
+  for (int i = 0; i < m_chartAnzMax; ++i)
+  {
+    chart1->ChartAreas[i]->AxisX->ScaleView->Zoom(fMinNew, fMaxNew);
+  }
 }
 
 private: unsigned int getValues(int index, AGGREGATION aggregation, AGGREGATION_TYP aggregationTyp, List<double> ^ valuesAggregated, List<int> ^ dateTimeIndices)
@@ -775,13 +771,23 @@ private: System::Void Diagramm_KeyDown(System::Object^  sender, System::Windows:
 
 private: System::Void Diagramm_MouseWheel(System::Object^  sender, System::Windows::Forms::MouseEventArgs^ e)
 {
-  // Determine X value/index at cursor position
-  RectangleF rc = InnerPlotPositionClientRectangle(chart1, chart1->ChartAreas[0]);
-  int nPos = Math::Min(Math::Max(int(rc.Left), e->X), int(rc.Right));
-  double fPos = chart1->ChartAreas[0]->AxisX->PixelPositionToValue(nPos);
+  // Determine a valid chart area
+  for (int i = 0; i < m_chartAnzMax; ++i)
+  {
+    RectangleF rc = InnerPlotPositionClientRectangle(chart1, chart1->ChartAreas[i]);
+    if (!rc.IsEmpty)
+    {
+      // Determine X value/index at cursor position
+      RectangleF rc = InnerPlotPositionClientRectangle(chart1, chart1->ChartAreas[i]);
+      int nPos = Math::Min(Math::Max(int(rc.Left), e->X), int(rc.Right));
+      double fPos = chart1->ChartAreas[i]->AxisX->PixelPositionToValue(nPos);
 
-  // Perform zooming relative to the given position
-  performZoom(e->Delta, fPos);
+      // Perform zooming relative to the given position
+      performZoom(e->Delta, fPos);
+      break;
+    }
+  }
+
 }
 
 private: System::Void buttonBeenden_Click(System::Object^  sender, System::EventArgs^  e)
@@ -814,14 +820,14 @@ private: System::Void comboBoxZeitaufloesung_SelectedIndexChanged(System::Object
   if (comboBoxZeitaufloesung->SelectedIndex == 0)
   {
     //zoomEnabled = true;
-    chart1->ChartAreas[0]->AxisX->ScaleView->Zoomable = true;
+    chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->Zoomable = true;
     fillChart();
   }
   else
   {
     List<double>    ^ values = gcnew List<double>;
     List<int>       ^ dateTimeIndices = gcnew List<int>;
-    chart1->ChartAreas[0]->AxisX->ScaleView->Zoomable = false;
+    chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->Zoomable = false;
 
     for (i = 0; i < m_seriesAnz; i++)
     {
@@ -853,7 +859,7 @@ private: System::Void comboBoxZeitaufloesung_SelectedIndexChanged(System::Object
       }
     }
   }
-  chart1->ChartAreas[0]->AxisX->ScaleView->ZoomReset();
+  chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ZoomReset();
   chart1->Refresh();
 }
 
@@ -874,7 +880,7 @@ private: System::Void chart1_KeyDown(System::Object^  sender, System::Windows::F
     {
       int nScale = 1;
       if (e->Control) nScale = 10;
-      performPan(+120 * nScale);
+      performPan(+120 * nScale, chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMinimum, chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMaximum);
       break;
     }
 
@@ -882,7 +888,7 @@ private: System::Void chart1_KeyDown(System::Object^  sender, System::Windows::F
     {
       int nScale = 1;
       if (e->Control) nScale = 10;
-      performPan(-120 * nScale);
+      performPan(-120 * nScale, chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMinimum, chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMaximum);
       break;
     }
 
@@ -890,7 +896,7 @@ private: System::Void chart1_KeyDown(System::Object^  sender, System::Windows::F
     {
       int nScale = 1;
       if (e->Control) nScale = 4;
-      performZoom(+120 * nScale, (chart1->ChartAreas[0]->AxisX->Minimum + chart1->ChartAreas[0]->AxisX->Maximum) / 2);
+      performZoom(+120 * nScale, (chart1->ChartAreas[m_chartList[0]]->AxisX->Minimum + chart1->ChartAreas[m_chartList[0]]->AxisX->Maximum) / 2);
       break;
     }
 
@@ -898,7 +904,7 @@ private: System::Void chart1_KeyDown(System::Object^  sender, System::Windows::F
     {
       int nScale = 1;
       if (e->Control) nScale = 4;
-      performZoom(-120 * nScale, (chart1->ChartAreas[0]->AxisX->Minimum + chart1->ChartAreas[0]->AxisX->Maximum) / 2);
+      performZoom(-120 * nScale, (chart1->ChartAreas[m_chartList[0]]->AxisX->Minimum + chart1->ChartAreas[m_chartList[0]]->AxisX->Maximum) / 2);
       break;
     }
   }
