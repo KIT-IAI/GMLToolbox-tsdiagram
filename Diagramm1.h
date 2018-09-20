@@ -139,6 +139,11 @@ private:
     chartArea1->AxisX->IsMarginVisible = false;
     chartArea1->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
       | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
+    chartArea1->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+    chartArea1->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+    chartArea1->AxisX->ScrollBar->IsPositionedInside = false;
+    chartArea1->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+    chartArea1->AxisX->ScrollBar->Size = 20;
     chartArea1->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
     chartArea1->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
     chartArea1->AxisY->IsLabelAutoFit = false;
@@ -154,6 +159,11 @@ private:
     chartArea2->AxisX->IsMarginVisible = false;
     chartArea2->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
       | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
+    chartArea2->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+    chartArea2->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+    chartArea2->AxisX->ScrollBar->IsPositionedInside = false;
+    chartArea2->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+    chartArea2->AxisX->ScrollBar->Size = 20;
     chartArea2->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
     chartArea2->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
     chartArea2->AxisY->IsLabelAutoFit = false;
@@ -168,6 +178,11 @@ private:
     chartArea3->AxisX->IsMarginVisible = false;
     chartArea3->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
       | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
+    chartArea3->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+    chartArea3->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+    chartArea3->AxisX->ScrollBar->IsPositionedInside = false;
+    chartArea3->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+    chartArea3->AxisX->ScrollBar->Size = 20;
     chartArea3->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
     chartArea3->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
     chartArea3->AxisY->IsLabelAutoFit = false;
@@ -182,6 +197,11 @@ private:
     chartArea4->AxisX->IsMarginVisible = false;
     chartArea4->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
       | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
+    chartArea4->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+    chartArea4->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+    chartArea4->AxisX->ScrollBar->IsPositionedInside = false;
+    chartArea4->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+    chartArea4->AxisX->ScrollBar->Size = 20;
     chartArea4->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
     chartArea4->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
     chartArea4->AxisY->IsLabelAutoFit = false;
@@ -196,6 +216,11 @@ private:
     chartArea5->AxisX->IsMarginVisible = false;
     chartArea5->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
       | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
+    chartArea5->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+    chartArea5->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+    chartArea5->AxisX->ScrollBar->IsPositionedInside = false;
+    chartArea5->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+    chartArea5->AxisX->ScrollBar->Size = 20;
     chartArea5->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
     chartArea5->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
     chartArea5->AxisY->IsLabelAutoFit = false;
