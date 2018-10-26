@@ -139,11 +139,13 @@ private:
     chartArea1->AxisX->IsMarginVisible = false;
     chartArea1->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
       | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
+    chartArea1->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+    chartArea1->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
     chartArea1->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
     chartArea1->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
     chartArea1->AxisX->ScrollBar->IsPositionedInside = false;
     chartArea1->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-    chartArea1->AxisX->ScrollBar->Size = 20;
+    chartArea1->AxisX->ScrollBar->Size = 16;
     chartArea1->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
     chartArea1->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
     chartArea1->AxisY->IsLabelAutoFit = false;
@@ -159,11 +161,13 @@ private:
     chartArea2->AxisX->IsMarginVisible = false;
     chartArea2->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
       | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
+    chartArea2->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+    chartArea2->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
     chartArea2->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
     chartArea2->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
     chartArea2->AxisX->ScrollBar->IsPositionedInside = false;
     chartArea2->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-    chartArea2->AxisX->ScrollBar->Size = 20;
+    chartArea2->AxisX->ScrollBar->Size = 16;
     chartArea2->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
     chartArea2->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
     chartArea2->AxisY->IsLabelAutoFit = false;
@@ -178,11 +182,13 @@ private:
     chartArea3->AxisX->IsMarginVisible = false;
     chartArea3->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
       | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
+    chartArea3->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+    chartArea3->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
     chartArea3->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
     chartArea3->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
     chartArea3->AxisX->ScrollBar->IsPositionedInside = false;
     chartArea3->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-    chartArea3->AxisX->ScrollBar->Size = 20;
+    chartArea3->AxisX->ScrollBar->Size = 16;
     chartArea3->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
     chartArea3->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
     chartArea3->AxisY->IsLabelAutoFit = false;
@@ -197,11 +203,13 @@ private:
     chartArea4->AxisX->IsMarginVisible = false;
     chartArea4->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
       | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
+    chartArea4->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+    chartArea4->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
     chartArea4->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
     chartArea4->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
     chartArea4->AxisX->ScrollBar->IsPositionedInside = false;
     chartArea4->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-    chartArea4->AxisX->ScrollBar->Size = 20;
+    chartArea4->AxisX->ScrollBar->Size = 16;
     chartArea4->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
     chartArea4->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
     chartArea4->AxisY->IsLabelAutoFit = false;
@@ -216,11 +224,13 @@ private:
     chartArea5->AxisX->IsMarginVisible = false;
     chartArea5->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
       | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
+    chartArea5->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+    chartArea5->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
     chartArea5->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
     chartArea5->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
     chartArea5->AxisX->ScrollBar->IsPositionedInside = false;
     chartArea5->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-    chartArea5->AxisX->ScrollBar->Size = 20;
+    chartArea5->AxisX->ScrollBar->Size = 16;
     chartArea5->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
     chartArea5->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
     chartArea5->AxisY->IsLabelAutoFit = false;
@@ -263,7 +273,7 @@ private:
     this->chart1->Location = System::Drawing::Point(0, 0);
     this->chart1->Margin = System::Windows::Forms::Padding(0);
     this->chart1->Name = L"chart1";
-    this->chart1->Size = System::Drawing::Size(1158, 736);
+    this->chart1->Size = System::Drawing::Size(1157, 736);
     this->chart1->TabIndex = 0;
     this->chart1->Text = L"chart1";
     this->chart1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Diagramm::chart1_KeyDown);
@@ -274,7 +284,7 @@ private:
     // 
     this->buttonBeenden->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
     this->buttonBeenden->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-    this->buttonBeenden->Location = System::Drawing::Point(974, 762);
+    this->buttonBeenden->Location = System::Drawing::Point(973, 762);
     this->buttonBeenden->Margin = System::Windows::Forms::Padding(4);
     this->buttonBeenden->Name = L"buttonBeenden";
     this->buttonBeenden->Size = System::Drawing::Size(160, 46);
@@ -346,120 +356,121 @@ private:
 
 #pragma region Public Accessors
 
-public: System::Void setStartTime(int year, int month, int day, int hour, int minute, int second)
-{
-  if (month > 0 && day > 0)
+  public: System::Void setStartTime(int year, int month, int day, int hour, int minute, int second)
   {
-    if (year <= 0) year = 2022;
-
-    if (hour >= 0 && minute >= 0 && second >= 0)
+    if (month > 0 && day > 0)
     {
-      m_startTime = gcnew DateTime(year, month, day, hour, minute, second);
-      m_hasTime = true;
-      m_hasDate = true;
+      if (year <= 0) year = 2022;
+
+      if (hour >= 0 && minute >= 0 && second >= 0)
+      {
+        m_startTime = gcnew DateTime(year, month, day, hour, minute, second);
+        m_hasTime = true;
+        m_hasDate = true;
+      }
+      else
+      {
+        m_startTime = gcnew DateTime(year, month, day);
+        m_hasTime = false;
+        m_hasDate = true;
+      }
     }
     else
     {
-      m_startTime = gcnew DateTime(year, month, day);
-      m_hasTime = false;
-      m_hasDate = true;
+      m_startTime = gcnew DateTime(2022, 1, 1, hour, minute, second);
+      m_hasTime = true;
+      m_hasDate = false;
     }
   }
-  else
-  {
-    m_startTime = gcnew DateTime(2022, 1, 1, hour, minute, second);
-    m_hasTime = true;
-    m_hasDate = false;
-  }
-}
 
-public: System::Void setEndTime(int year, int month, int day, int hour, int minute, int second)
-{
-  if (month > 0 && day > 0)
+  public: System::Void setEndTime(int year, int month, int day, int hour, int minute, int second)
   {
-    if (year <= 0) year = 2022;
-
-    if (hour >= 0 && minute >= 0 && second >= 0)
+    if (month > 0 && day > 0)
     {
-      m_endTime = gcnew DateTime(year, month, day, hour, minute, second);
-      m_hasTime = true;
-      m_hasDate = true;
+      if (year <= 0) year = 2022;
+
+      if (hour >= 0 && minute >= 0 && second >= 0)
+      {
+        m_endTime = gcnew DateTime(year, month, day, hour, minute, second);
+        m_hasTime = true;
+        m_hasDate = true;
+      }
+      else
+      {
+        m_endTime = gcnew DateTime(year, month, day);
+        m_hasTime = false;
+        m_hasDate = true;
+      }
+
     }
     else
     {
-      m_endTime = gcnew DateTime(year, month, day);
-      m_hasTime = false;
-      m_hasDate = true;
+      m_endTime = gcnew DateTime(2022, 1, 1, hour, minute, second);
+      m_hasTime = true;
+      m_hasDate = false;
+    }
+  }
+
+  public: System::Void setTimeIncrement(int days, int hours, int minutes, int seconds)
+  {
+    m_timeIncrement = gcnew TimeSpan(days, hours, minutes, seconds);
+  }
+
+  public: System::Void setValues(DataValues ^ values, String ^  theme, String ^ uom, int chartNum, AGGREGATION_TYP aggregationType)
+  {
+    setValues(values, theme, uom, chartNum, aggregationType, true);
+  }
+
+  public: System::Void setValues(DataValues ^ values, String ^  theme, String ^ uom, int chartNum, AGGREGATION_TYP aggregationType, bool showSerie)
+  {
+    if (chartNum > m_chartAnzMax - 1)
+      return;
+
+    // TODO: Warum werden die Daten hier kopiert? Darf der Aufrufer die Daten beliebig ändern?
+    DataValues ^ valueList = gcnew DataValues(values);
+
+    m_values->Add(valueList);
+
+    m_aggregationTyp[chartNum] = aggregationType;
+
+    m_chartList->Add(chartNum);
+
+    m_showSeries->Add(showSerie);
+    m_seriesText->Add(theme);
+
+    m_seriesAnz++;
+
+    Series ^  series = gcnew Series();
+
+    String ^seriesName = String::Concat("Series", Convert::ToString(m_seriesAnz));
+
+    series->ChartArea = chart1->ChartAreas[chartNum]->Name;
+    series->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+    series->EmptyPointStyle->Color = System::Drawing::Color::Red;
+    series->EmptyPointStyle->MarkerColor = System::Drawing::Color::Fuchsia;
+    series->EmptyPointStyle->MarkerStyle = System::Windows::Forms::DataVisualization::Charting::MarkerStyle::Square;
+    series->Legend = chart1->Legends[chartNum]->Name;
+    series->LegendText = theme;
+    series->Name = seriesName;
+    series->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::DateTime;
+    series->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+    series->MarkerStyle = System::Windows::Forms::DataVisualization::Charting::MarkerStyle::Circle;
+
+    ChartArea ^ pChartArea = chart1->ChartAreas[chartNum];
+    pChartArea->AxisY->Title = uom;
+    this->chart1->Series->Add(series);
+
+    int valueAnz = valueList->Count;
+    if (valueAnz < m_valueAnz || m_valueAnz == 0)
+    {
+      m_valueAnz = valueAnz;
+      //prepareZoomstufen();
     }
 
-  }
-  else
-  {
-    m_endTime = gcnew DateTime(2022, 1, 1, hour, minute, second);
-    m_hasTime = true;
-    m_hasDate = false;
-  }
-}
-
-public: System::Void setTimeIncrement(int days, int hours, int minutes, int seconds)
-{
-  m_timeIncrement = gcnew TimeSpan(days, hours, minutes, seconds);
-}
-
-public: System::Void setValues(DataValues ^ values, String ^  theme, String ^ uom, int chartNum, AGGREGATION_TYP aggregationType)
-{
-  setValues(values, theme, uom, chartNum, aggregationType, true);
-}
-
-public: System::Void setValues(DataValues ^ values, String ^  theme, String ^ uom, int chartNum, AGGREGATION_TYP aggregationType, bool showSerie)
-{
-  if (chartNum > m_chartAnzMax - 1)
-    return;
-
-  // TODO: Warum werden die Daten hier kopiert? Darf der Aufrufer die Daten beliebig ändern?
-  DataValues ^ valueList = gcnew DataValues(values);
-
-  m_values->Add(valueList);
-
-  m_aggregationTyp[chartNum] = aggregationType;
-
-  m_chartList->Add(chartNum);
-
-  m_showSeries->Add(showSerie);
-  m_seriesText->Add(theme);
-
-  m_seriesAnz++;
-
-  Series ^  series = gcnew Series();
-
-  String ^seriesName = String::Concat("Series", Convert::ToString(m_seriesAnz));
-
-  series->ChartArea = chart1->ChartAreas[chartNum]->Name;
-  series->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-  series->EmptyPointStyle->Color = System::Drawing::Color::Red;
-  series->EmptyPointStyle->MarkerColor = System::Drawing::Color::Fuchsia;
-  series->EmptyPointStyle->MarkerStyle = System::Windows::Forms::DataVisualization::Charting::MarkerStyle::Square;
-  series->Legend = chart1->Legends[chartNum]->Name;
-  series->LegendText = theme;
-  series->Name = seriesName;
-  series->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::DateTime;
-  series->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
-
-  ChartArea ^ pChartArea = chart1->ChartAreas[chartNum];
-  pChartArea->AxisY->Title = uom;
-  this->chart1->Series->Add(series);
-
-  int valueAnz = valueList->Count;
-  if (valueAnz < m_valueAnz || m_valueAnz == 0)
-  {
-    m_valueAnz = valueAnz;
-    //prepareZoomstufen();
+    checkChartVisibility();
   }
 
-  checkChartVisibility();
-}
-
-public: System::Void setMissingValue(double value)
+  public: System::Void setMissingValue(double value)
 {
   m_missingValue = value;
 }
@@ -468,189 +479,229 @@ public: System::Void setMissingValue(double value)
 
 #pragma region Drawing helpers
 
-private: System::Void checkChartVisibility()
-{
-  for (int i = 0; i < m_chartAnzMax; i++)
+  private: System::Void checkChartVisibility()
   {
-    bool showChart = false;
-    for (int j = 0; j < m_seriesAnz; j++)
+    for (int i = 0; i < m_chartAnzMax; i++)
     {
-      if (m_chartList[j] == i && m_showSeries[j] == true)
-        showChart = true;
-    }
-    if (showChart)
-      chart1->ChartAreas[i]->Visible = true;
-    else
-      chart1->ChartAreas[i]->Visible = false;
-  }
-}
-
-private: System::Void fillChart()
-{
-  int           i, j;
-  double        value;
-  DateTime    ^ dateTime;
-  DataPoint   ^ dataPoint;
-
-  for (i = 0; i < m_seriesAnz; i++)
-  {
-    Series     ^ series = this->chart1->Series[i];
-    DataValues ^ values = m_values[i];
-    if (m_showSeries[i])
-    {
-      series->Enabled = true;
-    }
-    else
-    {
-      series->Enabled = false;
-    }
-
-    series->Points->Clear();
-    for (j = 0; j < m_valueAnz; j++)
-    {
-      value = values[j];
-      dateTime = getTimePosition(j);
-
-      dataPoint = gcnew DataPoint();
-      if (value == m_missingValue)
+      bool showChart = false;
+      for (int j = 0; j < m_seriesAnz; j++)
       {
-        dataPoint->SetValueXY(dateTime, 0.0);
-        dataPoint->IsEmpty = true;
+        if (m_chartList[j] == i && m_showSeries[j] == true)
+          showChart = true;
       }
+      if (showChart)
+        chart1->ChartAreas[i]->Visible = true;
       else
-      {
-        dataPoint->SetValueXY(dateTime, value);
-      }
-
-      series->Points->Add(dataPoint);
+        chart1->ChartAreas[i]->Visible = false;
     }
   }
-}
 
-private: RectangleF ChartAreaClientRectangle(Chart ^chart, ChartArea ^CA)
-{
-  RectangleF CAR = CA->Position->ToRectangleF();
-  float pw = chart->ClientSize.Width / 100.0f;
-  float ph = chart->ClientSize.Height / 100.0f;
-  return RectangleF(pw * CAR.X, ph * CAR.Y, pw * CAR.Width, ph * CAR.Height);
-}
-
-private: RectangleF InnerPlotPositionClientRectangle(Chart ^chart, ChartArea ^CA)
-{
-  RectangleF IPP = CA->InnerPlotPosition->ToRectangleF();
-  RectangleF CArp = ChartAreaClientRectangle(chart, CA);
-
-  float pw = CArp.Width / 100.0f;
-  float ph = CArp.Height / 100.0f;
-
-  return RectangleF(CArp.X + pw * IPP.X, CArp.Y + ph * IPP.Y,
-    pw * IPP.Width, ph * IPP.Height);
-}
-
-private: System::Void performZoom(int nDelta, double fPos)
-{
-  if (!chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->Zoomable)
-    return;
-
-  // Calculate a temporaray zoom level from the delta, limit downwards to 0
-  int nZoomLevel = Math::Max(0, m_nZoomLevel + nDelta);
-
-  // Get the absolute limits (in real units) of the provided data
-  double fScaleStart = getTimePosition(0)->ToOADate();
-  double fScaleEnd = getTimePosition(m_valueAnz - 1)->ToOADate();
-
-  // Calculate the current scale factor and the left and right limit using this scale,
-  // so that the point under the mouse position does not move while scaling
-  double fScale = Math::Pow(1.2, nZoomLevel / 120.0);
-  fScaleStart = (fScaleStart - fPos) / fScale + fPos;
-  fScaleEnd = (fScaleEnd - fPos) / fScale + fPos;
-
-  // If the scale gets to small do not apply the calcualted zoom
-  double fHours = TimeSpan::FromDays(fScaleEnd - fScaleStart).TotalHours;
-  if (fHours >= 6)
+  private: System::Void FillDataSeries()
   {
-    // Determine time format for X axis
-    String^ sLabelFormat = "d";
-    DateTimeIntervalType eType = DateTimeIntervalType::Days;
-    if (fHours <= 72)
+    List<double>    ^ values = gcnew List<double>;
+    List<int>       ^ dateTimeIndices = gcnew List<int>;
+
+    // For some aggregation types we modifiy the timestamp to have the value in the middle of an interval
+    TimeSpan tmOffset;
+    switch (m_aggregation)
     {
-      sLabelFormat = "g";
-      eType = DateTimeIntervalType::Hours;
+      case AGGREGATION::TAEGLICH:
+        tmOffset = TimeSpan::FromHours(12);
+        break;
+
+      case AGGREGATION::WOECHENTLICH:
+        tmOffset = TimeSpan::FromHours(3 * 24 + 12);
+        break;
+
+      case AGGREGATION::MONATLICH:
+        tmOffset = TimeSpan::FromDays(15);
+        break;
     }
 
+    for (int i = 0; i < m_seriesAnz; i++)
+    {
+      Series ^ series = this->chart1->Series[i];
+      series->Enabled = m_showSeries[i];
+
+      series->Points->Clear();
+      values->Clear();
+      dateTimeIndices->Clear();
+
+      int anz = getValues(i, m_aggregation, m_aggregationTyp[m_chartList[i]], values, dateTimeIndices);
+      for (int j = 0; j < anz; j++)
+      {
+        double value = values[j];
+        DateTime ^dateTime = getTimePosition(dateTimeIndices[j]);
+
+        DataPoint ^dataPoint = gcnew DataPoint();
+        if (value == m_missingValue)
+        {
+          dataPoint->SetValueXY(dateTime->Add(tmOffset), 0.0);
+          dataPoint->IsEmpty = true;
+        }
+        else
+        {
+          dataPoint->SetValueXY(dateTime->Add(tmOffset), value);
+        }
+
+        series->Points->Add(dataPoint);
+      }
+    }
+  }
+
+  private: RectangleF ChartAreaClientRectangle(Chart ^chart, ChartArea ^CA)
+  {
+    RectangleF CAR = CA->Position->ToRectangleF();
+    float pw = chart->ClientSize.Width / 100.0f;
+    float ph = chart->ClientSize.Height / 100.0f;
+    return RectangleF(pw * CAR.X, ph * CAR.Y, pw * CAR.Width, ph * CAR.Height);
+  }
+
+  private: RectangleF InnerPlotPositionClientRectangle(Chart ^chart, ChartArea ^CA)
+  {
+    RectangleF IPP = CA->InnerPlotPosition->ToRectangleF();
+    RectangleF CArp = ChartAreaClientRectangle(chart, CA);
+
+    float pw = CArp.Width / 100.0f;
+    float ph = CArp.Height / 100.0f;
+
+    return RectangleF(CArp.X + pw * IPP.X, CArp.Y + ph * IPP.Y,
+      pw * IPP.Width, ph * IPP.Height);
+  }
+
+  private: System::Void performZoom(int nDelta, double fPos)
+  {
+    if (!chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->Zoomable)
+      return;
+
+    // Calculate a temporaray zoom level from the delta, limit downwards to 0
+    int nZoomLevel = Math::Max(0, m_nZoomLevel + nDelta);
+
+    // Get the absolute limits (in real units) of the provided data
+    double fScaleStart = getTimePosition(0)->ToOADate();
+    double fScaleEnd = getTimePosition(m_valueAnz - 1)->ToOADate();
+
+    // Calculate the current scale factor and the left and right limit using this scale,
+    // so that the point under the mouse position does not move while scaling
+    double fScale = Math::Pow(1.2, nZoomLevel / 120.0);
+    fScaleStart = (fScaleStart - fPos) / fScale + fPos;
+    fScaleEnd = (fScaleEnd - fPos) / fScale + fPos;
+
+    // If the scale gets to small do not apply the calcualted zoom
+    double fHours = TimeSpan::FromDays(fScaleEnd - fScaleStart).TotalHours;
+    if (fHours >= 6)
+    {
+      // Determine time format for X axis
+      String^ sLabelFormat = "d";
+      DateTimeIntervalType eType = DateTimeIntervalType::Days;
+      if (fHours <= 72)
+      {
+        sLabelFormat = "g";
+        eType = DateTimeIntervalType::Hours;
+      }
+
+      for (int i = 0; i < m_chartAnzMax; ++i)
+      {
+        chart1->ChartAreas[i]->AxisX->ScaleView->Zoom(fScaleStart, fScaleEnd);
+        //chart1->ChartAreas[i]->AxisX->LabelStyle->Format = sLabelFormat;
+        //chart1->ChartAreas[i]->AxisX->MajorTickMark->IntervalType = eType;
+      }
+      m_nZoomLevel = nZoomLevel;
+
+      ApplyAxisFormatting();
+    }
+  }
+
+  private: System::Void performPan(int nDelta, double fMin, double fMax)
+  {
+    if (!chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->Zoomable)
+      return;
+
+    // Calculate the proposed movement (currently 10% of the range per nDelta fraction)
+    double fOffset = (fMax - fMin) * nDelta / 120 * 0.1;
+
+    // Apply the offset, but respect absolute limits of the actual data
+    double fMinData = getTimePosition(0)->ToOADate();
+    double fMinNew = Math::Max(fMinData, fMin + fOffset);
+    if (fMinNew == fMinData)
+    {
+      fOffset = -(fMin - fMinData);
+    }
+
+    double fMaxData = getTimePosition(m_valueAnz - 1)->ToOADate();
+    double fMaxNew = Math::Min(fMaxData, fMax + fOffset);
+    if (fMaxNew == fMaxData)
+    {
+      fOffset = Math::Min(fMaxData, fMax) - fMax;
+      fMinNew = fMin + fOffset;
+    }
+
+    // Apply the calculated limits
     for (int i = 0; i < m_chartAnzMax; ++i)
     {
-      chart1->ChartAreas[i]->AxisX->ScaleView->Zoom(fScaleStart, fScaleEnd);
-      chart1->ChartAreas[i]->AxisX->LabelStyle->Format = sLabelFormat;
-      chart1->ChartAreas[i]->AxisX->MajorTickMark->IntervalType = eType;
+      chart1->ChartAreas[i]->AxisX->ScaleView->Zoom(fMinNew, fMaxNew);
     }
-    m_nZoomLevel = nZoomLevel;
-  }
-}
-
-private: System::Void performPan(int nDelta, double fMin, double fMax)
-{
-  if (!chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->Zoomable)
-    return;
-
-  // Calculate the proposed movement (currently 10% of the range per nDelta fraction)
-  double fOffset = (fMax - fMin) * nDelta / 120 * 0.1;
-
-  // Apply the offset, but respect absolute limits of the actual data
-  double fMinData = getTimePosition(0)->ToOADate();
-  double fMinNew = Math::Max(fMinData, fMin + fOffset);
-  if (fMinNew == fMinData)
-  {
-    fOffset = fMin - fMinData;
   }
 
-  double fMaxData = getTimePosition(m_valueAnz - 1)->ToOADate();
-  double fMaxNew = Math::Min(fMaxData, fMax + fOffset);
-  if (fMaxNew == fMaxData)
+  private: unsigned int getValues(int index, AGGREGATION aggregation, AGGREGATION_TYP aggregationTyp,
+                                  List<double> ^ valuesAggregated, List<int> ^ dateTimeIndices)
   {
-    fOffset = fMaxData - fMax;
-    fMinNew = fMin + fOffset;
-  }
+    double         value, valueAggregated;
+    int            anzValue, anzDay;
+    int            month, day, ind;
+    DataValues ^   values = m_values[index];
 
-  // Apply the calculated limits
-  for (int i = 0; i < m_chartAnzMax; ++i)
-  {
-    chart1->ChartAreas[i]->AxisX->ScaleView->Zoom(fMinNew, fMaxNew);
-  }
-}
+    valueAggregated = 0;
+    anzValue = 0;
+    anzDay = 0;
+    month = m_startTime->Month;
+    day = m_startTime->Day;
+    DateTime ^ startTime = getTimePosition(0);
+    ind = 0;
 
-private: unsigned int getValues(int index, AGGREGATION aggregation, AGGREGATION_TYP aggregationTyp, List<double> ^ valuesAggregated, List<int> ^ dateTimeIndices)
-{
-  double         value, valueAggregated;
-  int            anzValue, anzDay;
-  int            month, day, ind;
-  DataValues ^   values = m_values[index];
-
-  valueAggregated = 0;
-  anzValue = 0;
-  anzDay = 0;
-  month = m_startTime->Month;
-  day = m_startTime->Day;
-  DateTime ^ startTime = getTimePosition(0);
-  ind = 0;
-
-  for (int i = 0; i < m_valueAnz; i++)
-  {
-    DateTime ^ actTime = getTimePosition(i);
-    value = values[i];
-    if (aggregation == AGGREGATION::NONE)
+    for (int i = 0; i < m_valueAnz; i++)
     {
-      valuesAggregated->Add(value);
-      dateTimeIndices->Add(i);
-      continue;
-    }
-
-    if (actTime->Day != day && aggregation != AGGREGATION::MONATLICH)
-    {
-      anzDay++;
-      day = actTime->Day;
-      if ((aggregation == AGGREGATION::TAEGLICH && anzDay == 1) || (aggregation == AGGREGATION::WOECHENTLICH && anzDay == 7))
+      DateTime ^ actTime = getTimePosition(i);
+      value = values[i];
+      if (aggregation == AGGREGATION::NONE)
       {
+        valuesAggregated->Add(value);
+        dateTimeIndices->Add(i);
+        continue;
+      }
+
+      if (actTime->Day != day && aggregation != AGGREGATION::MONATLICH)
+      {
+        anzDay++;
+        day = actTime->Day;
+        if ((aggregation == AGGREGATION::TAEGLICH && anzDay == 1) || (aggregation == AGGREGATION::WOECHENTLICH && anzDay == 7))
+        {
+          if (anzValue > 0)
+          {
+            if (aggregationTyp == AGGREGATION_TYP::MITTELWERT)
+            {
+              valueAggregated = valueAggregated / anzValue;
+            }
+          }
+          else
+          {
+            valueAggregated = m_missingValue;
+          }
+
+          valuesAggregated->Add(valueAggregated);
+          dateTimeIndices->Add(ind);
+
+          startTime = actTime;
+          ind = i;
+          anzDay = 0;
+          anzValue = 0;
+          valueAggregated = 0.0;
+        }
+      }
+
+      if (actTime->Month != month && aggregation == AGGREGATION::MONATLICH)
+      {
+        month = actTime->Month;
         if (anzValue > 0)
         {
           if (aggregationTyp == AGGREGATION_TYP::MITTELWERT)
@@ -668,274 +719,309 @@ private: unsigned int getValues(int index, AGGREGATION aggregation, AGGREGATION_
 
         startTime = actTime;
         ind = i;
-        anzDay = 0;
         anzValue = 0;
         valueAggregated = 0.0;
       }
+
+      if (value != m_missingValue)
+      {
+        valueAggregated = valueAggregated + value;
+        anzValue++;
+      }
     }
 
-    if (actTime->Month != month && aggregation == AGGREGATION::MONATLICH)
+    if (anzValue > 0)
     {
-      month = actTime->Month;
-      if (anzValue > 0)
+      if (aggregationTyp == AGGREGATION_TYP::MITTELWERT)
       {
-        if (aggregationTyp == AGGREGATION_TYP::MITTELWERT)
-        {
-          valueAggregated = valueAggregated / anzValue;
-        }
-      }
-      else
-      {
-        valueAggregated = m_missingValue;
+        valueAggregated = valueAggregated / anzValue;
       }
 
-      valuesAggregated->Add(valueAggregated);
-      dateTimeIndices->Add(ind);
-
-      startTime = actTime;
-      ind = i;
-      anzValue = 0;
-      valueAggregated = 0.0;
+      // Skip the last interval for weekly accumulation only
+      if (aggregation != AGGREGATION::WOECHENTLICH || aggregationTyp != AGGREGATION_TYP::SUMME)
+      {
+        valuesAggregated->Add(valueAggregated);
+        dateTimeIndices->Add(ind);
+      }
     }
 
-    if (value != m_missingValue)
-    {
-      valueAggregated = valueAggregated + value;
-      anzValue++;
-    }
+    return valuesAggregated->Count;
   }
 
-  if (anzValue > 0)
+  private: DateTime ^  getTimePosition(unsigned int count)
   {
-    if (aggregationTyp == AGGREGATION_TYP::MITTELWERT)
-      valueAggregated = valueAggregated / anzValue;
-    else
-      valueAggregated = m_missingValue;
+    int days = m_timeIncrement->Days;
+    int hours = m_timeIncrement->Hours;
+    int minutes = m_timeIncrement->Minutes;
+    int seconds = m_timeIncrement->Seconds;
 
-    valuesAggregated->Add(valueAggregated);
-    dateTimeIndices->Add(ind);
+
+    TimeSpan ^ timeSpan = gcnew TimeSpan(days*count, hours*count, minutes*count, seconds*count);
+    DateTime ^ newDateTime = gcnew DateTime;
+    newDateTime = *m_startTime + *timeSpan;
+    return newDateTime;
   }
 
-  return valuesAggregated->Count;
-}
-
-private: DateTime ^  getTimePosition(unsigned int count)
+  private: System::Void refreshSeries()
 {
-  int days = m_timeIncrement->Days;
-  int hours = m_timeIncrement->Hours;
-  int minutes = m_timeIncrement->Minutes;
-  int seconds = m_timeIncrement->Seconds;
-
-
-  TimeSpan ^ timeSpan = gcnew TimeSpan(days*count, hours*count, minutes*count, seconds*count);
-  DateTime ^ newDateTime = gcnew DateTime;
-  newDateTime = *m_startTime + *timeSpan;
-  return newDateTime;
-}
-
-private: System::Void refreshSeries()
-{
-  int               i, j, anz;
-  List<double>    ^ values = gcnew List<double>;
-  List<int>       ^ dateTimeIndices = gcnew List<int>;
-  double            value;
-  DateTime        ^ dateTime;
-  DataPoint       ^ dataPoint;
-
-  for (i = 0; i < m_seriesAnz; i++)
+  for (int i = 0; i < m_seriesAnz; i++)
   {
     Series ^ series = this->chart1->Series[i];
-
     series->Enabled = m_showSeries[i];
+  }
 
-    series->Points->Clear();
-    values->Clear();
-    dateTimeIndices->Clear();
+  ApplySeriesSettings();
+  FillDataSeries();
 
-    anz = getValues(i, m_aggregation, m_aggregationTyp[m_chartList[i]], values, dateTimeIndices);
-    for (j = 0; j < anz; j++)
+  checkChartVisibility();
+  chart1->Refresh();
+}
+
+  private: System::Void ApplySeriesSettings()
+  {
+    // Enable or disable markers, depending on the aggregation type
+    bool bShowMarkers;
+    switch (m_aggregation)
     {
-      value = values[j];
-      dateTime = getTimePosition(dateTimeIndices[j]);
+      case AGGREGATION::MONATLICH:
+      case AGGREGATION::WOECHENTLICH:
+        bShowMarkers = true;
+        break;
 
-      dataPoint = gcnew DataPoint();
-      if (value == m_missingValue)
-      {
-        dataPoint->SetValueXY(dateTime, 0.0);
-        dataPoint->IsEmpty = true;
-      }
-      else
-        dataPoint->SetValueXY(dateTime, value);
-
-      series->Points->Add(dataPoint);
+      case AGGREGATION::TAEGLICH:
+      default:
+        bShowMarkers = false;
+        break;
+    }
+    for (int i = 0; i < m_seriesAnz; ++i)
+    {
+      chart1->Series[i]->MarkerStyle = bShowMarkers ? MarkerStyle::Circle : MarkerStyle::None;
     }
   }
 
-  checkChartVisibility();
+  private: System::Void ApplyAxisFormatting()
+  {
+    DateTimeIntervalType eIntervalType;
+    String ^sIntervalFormat;
+    double nInterval = 1;
+    double nOffset = 0.5;
 
-  chart1->Refresh();
-}
+    // Determine the visible range
+    double fStart = chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMinimum;
+    double fEnd = chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMaximum;
+    if (!double::IsNaN(fStart) && !double::IsNaN(fEnd))
+    {
+      DateTime tmStart = DateTime::FromOADate(fStart);
+      DateTime tmEnd = DateTime::FromOADate(fEnd);
+      TimeSpan tSpan = tmEnd - tmStart;
+
+      // Hint: The label type changes when there are less than 3 intervalls visible!
+      if (tSpan.TotalHours < 6)
+      {
+        // Less than 3 double hours visible, show hours
+        sIntervalFormat = "{0:d.M. HH:mm}";
+        eIntervalType = DateTimeIntervalType::Hours;
+        nInterval = 1;
+      }
+      else if (tSpan.TotalHours < 18)
+      {
+        // Less than 3 quarter days visible, show double hours
+        sIntervalFormat = "{0:d.M. HH:mm}";
+        eIntervalType = DateTimeIntervalType::Hours;
+        nInterval = 2;
+      }
+      else if (tSpan.TotalDays < 3)
+      {
+        // Less than 3 days visible, show quarter days
+        sIntervalFormat = "{0:d. MMM, HH:mm}";
+        eIntervalType = DateTimeIntervalType::Hours;
+        nInterval = 6;
+      }
+      else if (tSpan.TotalDays < 10)
+      {
+        // Less than 10 days visible, show single days
+        sIntervalFormat = "{0:d. MMM}";
+        eIntervalType = DateTimeIntervalType::Days;
+        nInterval = 1;
+      }
+      else if (tSpan.TotalDays < 21)
+      {
+        // Less than 3 weeks visible, show half weeks
+        sIntervalFormat = "{0:d. MMM yyyy}";
+        eIntervalType = DateTimeIntervalType::Weeks;
+        nInterval = 0.5;
+      }
+      else if (tSpan.TotalDays < 42)
+      {
+        // Less than 6 weeks visible, show single weeks
+        sIntervalFormat = "{0:d. MMM yyyy}";
+        eIntervalType = DateTimeIntervalType::Weeks;
+        nInterval = 1;
+      }
+      else if (tSpan.TotalDays < 90)
+      {
+        // There are less than 3 month visible, show double weeks (max. 13 weeks)
+        sIntervalFormat = "{0:d. MMM yyyy}";
+        eIntervalType = DateTimeIntervalType::Weeks;
+        nInterval = 2;
+      }
+      else if (tSpan.TotalDays < 180)
+      {
+        // There are less than 6 month visible, show single months
+        sIntervalFormat = "{0:d. MMM yyyy}";
+        eIntervalType = DateTimeIntervalType::Months;
+        nInterval = 1;
+      }
+      else
+      {
+        // show the year in quarters
+        sIntervalFormat = "{0:MMM yyyy}";
+        eIntervalType = DateTimeIntervalType::Months;
+        nInterval = 3;
+      }
+
+      nOffset = nInterval / 2;
+      Trace::WriteLine(String::Format("{0} {1} {2} {3}", eIntervalType, nInterval, nOffset, sIntervalFormat));
+    }
+
+    for (int i = 0; i < m_chartAnzMax; ++i)
+    {
+      chart1->ChartAreas[i]->AxisX->LabelStyle->Format = sIntervalFormat;
+      chart1->ChartAreas[i]->AxisX->LabelStyle->IntervalType = eIntervalType;
+      chart1->ChartAreas[i]->AxisX->LabelStyle->IntervalOffsetType = eIntervalType;
+      chart1->ChartAreas[i]->AxisX->LabelStyle->IntervalOffset = nOffset;
+      chart1->ChartAreas[i]->AxisX->LabelStyle->Interval = nInterval;
+      chart1->ChartAreas[i]->AxisX->IntervalType = eIntervalType;
+      chart1->ChartAreas[i]->AxisX->MajorTickMark->IntervalType = eIntervalType;
+      chart1->ChartAreas[i]->AxisX->MajorTickMark->IntervalOffsetType = eIntervalType;
+      chart1->ChartAreas[i]->AxisX->MajorTickMark->IntervalOffset = nOffset;
+      chart1->ChartAreas[i]->AxisX->MajorTickMark->Interval = nInterval;
+      chart1->ChartAreas[i]->AxisX->MajorGrid->IntervalType = eIntervalType;
+      chart1->ChartAreas[i]->AxisX->MajorGrid->IntervalOffsetType = eIntervalType;
+      chart1->ChartAreas[i]->AxisX->MajorGrid->Interval = nInterval;
+      chart1->ChartAreas[i]->AxisX->Minimum = getTimePosition(0)->ToOADate();
+      chart1->ChartAreas[i]->AxisX->Maximum = getTimePosition(m_valueAnz - 1)->ToOADate();
+    }
+  }
 
 #pragma endregion
 
 #pragma region Event handlers
 
-private: System::Void Diagramm_Shown(System::Object^  sender, System::EventArgs^  e)
-{
-  comboBoxZeitaufloesung->SelectedIndex = 0;
-  chart1->Focus();
-}
-
-private: System::Void Diagramm_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e)
-{
-  if (e->KeyCode == Keys::Escape)
+  private: System::Void Diagramm_Shown(System::Object^  sender, System::EventArgs^  e)
   {
-    this->Close();
+    comboBoxZeitaufloesung->SelectedIndex = 0;
+    chart1->Focus();
   }
-}
 
-private: System::Void Diagramm_MouseWheel(System::Object^  sender, System::Windows::Forms::MouseEventArgs^ e)
-{
-  // Determine a valid chart area
-  for (int i = 0; i < m_chartAnzMax; ++i)
+  private: System::Void Diagramm_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e)
   {
-    RectangleF rc = InnerPlotPositionClientRectangle(chart1, chart1->ChartAreas[i]);
-    if (!rc.IsEmpty)
+    if (e->KeyCode == Keys::Escape)
     {
-      // Determine X value/index at cursor position
-      RectangleF rc = InnerPlotPositionClientRectangle(chart1, chart1->ChartAreas[i]);
-      int nPos = Math::Min(Math::Max(int(rc.Left), e->X), int(rc.Right));
-      double fPos = chart1->ChartAreas[i]->AxisX->PixelPositionToValue(nPos);
-
-      // Perform zooming relative to the given position
-      performZoom(e->Delta, fPos);
-      break;
+      this->Close();
     }
   }
 
-}
-
-private: System::Void buttonBeenden_Click(System::Object^  sender, System::EventArgs^  e)
-{
-  Close();
-}
-
-private: System::Void buttonAusblenden_Click(System::Object^  sender, System::EventArgs^  e)
-{
-  AusblendenZeitreihen ^ pDialog = gcnew AusblendenZeitreihen(m_seriesText, m_showSeries);
-
-  System::Windows::Forms::DialogResult ok = pDialog->ShowDialog();
-
-  if (ok == System::Windows::Forms::DialogResult::OK)
+  private: System::Void Diagramm_MouseWheel(System::Object^  sender, System::Windows::Forms::MouseEventArgs^ e)
   {
-    pDialog->getResult(m_showSeries);
-    refreshSeries();
-  }
-}
-
-private: System::Void comboBoxZeitaufloesung_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e)
-{
-  int          i, j, anz;
-  double       value;
-  DateTime   ^ dateTime;
-  DataPoint  ^ dataPoint;
-
-  m_aggregation = (Diagramm::AGGREGATION)comboBoxZeitaufloesung->SelectedIndex;
-
-  if (comboBoxZeitaufloesung->SelectedIndex == 0)
-  {
-    //zoomEnabled = true;
-    chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->Zoomable = true;
-    fillChart();
-  }
-  else
-  {
-    List<double>    ^ values = gcnew List<double>;
-    List<int>       ^ dateTimeIndices = gcnew List<int>;
-    chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->Zoomable = false;
-
-    for (i = 0; i < m_seriesAnz; i++)
+    // Determine a valid chart area
+    for (int i = 0; i < m_chartAnzMax; ++i)
     {
-      Series ^ series = this->chart1->Series[i];
-      series->Enabled = m_showSeries[i];
-
-      series->Points->Clear();
-      values->Clear();
-      dateTimeIndices->Clear();
-
-      anz = getValues(i, m_aggregation, m_aggregationTyp[m_chartList[i]], values, dateTimeIndices);
-      for (j = 0; j < anz; j++)
+      RectangleF rc = InnerPlotPositionClientRectangle(chart1, chart1->ChartAreas[i]);
+      if (!rc.IsEmpty)
       {
-        value = values[j];
-        dateTime = getTimePosition(dateTimeIndices[j]);
+        // Determine X value/index at cursor position
+        RectangleF rc = InnerPlotPositionClientRectangle(chart1, chart1->ChartAreas[i]);
+        int nPos = Math::Min(Math::Max(int(rc.Left), e->X), int(rc.Right));
+        double fPos = chart1->ChartAreas[i]->AxisX->PixelPositionToValue(nPos);
 
-        dataPoint = gcnew DataPoint();
-        if (value == m_missingValue)
-        {
-          dataPoint->SetValueXY(dateTime, 0.0);
-          dataPoint->IsEmpty = true;
-        }
-        else
-        {
-          dataPoint->SetValueXY(dateTime, value);
-        }
+        // Perform zooming relative to the given position
+        performZoom(e->Delta, fPos);
+        break;
+      }
+    }
 
-        series->Points->Add(dataPoint);
+  }
+
+  private: System::Void buttonBeenden_Click(System::Object^  sender, System::EventArgs^  e)
+  {
+    Close();
+  }
+
+  private: System::Void buttonAusblenden_Click(System::Object^  sender, System::EventArgs^  e)
+  {
+    AusblendenZeitreihen ^ pDialog = gcnew AusblendenZeitreihen(m_seriesText, m_showSeries);
+
+    System::Windows::Forms::DialogResult ok = pDialog->ShowDialog();
+
+    if (ok == System::Windows::Forms::DialogResult::OK)
+    {
+      pDialog->getResult(m_showSeries);
+      refreshSeries();
+    }
+  }
+
+  private: System::Void comboBoxZeitaufloesung_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e)
+  {
+    m_aggregation = (Diagramm::AGGREGATION)comboBoxZeitaufloesung->SelectedIndex;
+
+    ApplySeriesSettings();
+    FillDataSeries();
+
+    chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ZoomReset();
+    chart1->Refresh();
+
+    ApplyAxisFormatting();
+  }
+
+  private: System::Void chart1_PreviewKeyDown(System::Object^  sender, System::Windows::Forms::PreviewKeyDownEventArgs^  e)
+  {
+    if (e->KeyCode == System::Windows::Forms::Keys::Right ||
+      e->KeyCode == System::Windows::Forms::Keys::Left ||
+      e->KeyCode == System::Windows::Forms::Keys::Up ||
+      e->KeyCode == System::Windows::Forms::Keys::Down)
+      e->IsInputKey = true;
+  }
+
+  private: System::Void chart1_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e)
+  {
+    switch (e->KeyCode)
+    {
+      case System::Windows::Forms::Keys::Right:
+      {
+        int nScale = 1;
+        if (e->Control) nScale = 10;
+        performPan(+120 * nScale, chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMinimum, chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMaximum);
+        break;
+      }
+
+      case System::Windows::Forms::Keys::Left:
+      {
+        int nScale = 1;
+        if (e->Control) nScale = 10;
+        performPan(-120 * nScale, chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMinimum, chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMaximum);
+        break;
+      }
+
+      case System::Windows::Forms::Keys::Up:
+      {
+        int nScale = 1;
+        if (e->Control) nScale = 4;
+        performZoom(+120 * nScale, (chart1->ChartAreas[m_chartList[0]]->AxisX->Minimum + chart1->ChartAreas[m_chartList[0]]->AxisX->Maximum) / 2);
+        break;
+      }
+
+      case System::Windows::Forms::Keys::Down:
+      {
+        int nScale = 1;
+        if (e->Control) nScale = 4;
+        performZoom(-120 * nScale, (chart1->ChartAreas[m_chartList[0]]->AxisX->Minimum + chart1->ChartAreas[m_chartList[0]]->AxisX->Maximum) / 2);
+        break;
       }
     }
   }
-  chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ZoomReset();
-  chart1->Refresh();
-}
 
-private: System::Void chart1_PreviewKeyDown(System::Object^  sender, System::Windows::Forms::PreviewKeyDownEventArgs^  e)
-{
-  if (e->KeyCode == System::Windows::Forms::Keys::Right ||
-    e->KeyCode == System::Windows::Forms::Keys::Left ||
-    e->KeyCode == System::Windows::Forms::Keys::Up ||
-    e->KeyCode == System::Windows::Forms::Keys::Down)
-    e->IsInputKey = true;
-}
-
-private: System::Void chart1_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e)
-{
-  switch (e->KeyCode)
-  {
-    case System::Windows::Forms::Keys::Right:
-    {
-      int nScale = 1;
-      if (e->Control) nScale = 10;
-      performPan(+120 * nScale, chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMinimum, chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMaximum);
-      break;
-    }
-
-    case System::Windows::Forms::Keys::Left:
-    {
-      int nScale = 1;
-      if (e->Control) nScale = 10;
-      performPan(-120 * nScale, chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMinimum, chart1->ChartAreas[m_chartList[0]]->AxisX->ScaleView->ViewMaximum);
-      break;
-    }
-
-    case System::Windows::Forms::Keys::Up:
-    {
-      int nScale = 1;
-      if (e->Control) nScale = 4;
-      performZoom(+120 * nScale, (chart1->ChartAreas[m_chartList[0]]->AxisX->Minimum + chart1->ChartAreas[m_chartList[0]]->AxisX->Maximum) / 2);
-      break;
-    }
-
-    case System::Windows::Forms::Keys::Down:
-    {
-      int nScale = 1;
-      if (e->Control) nScale = 4;
-      performZoom(-120 * nScale, (chart1->ChartAreas[m_chartList[0]]->AxisX->Minimum + chart1->ChartAreas[m_chartList[0]]->AxisX->Maximum) / 2);
-      break;
-    }
-  }
-}
-
-private: System::Void chart1_MouseClick(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e)
+  private: System::Void chart1_MouseClick(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e)
 {
   chart1->Focus();
 }
