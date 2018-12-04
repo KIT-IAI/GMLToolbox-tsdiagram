@@ -119,16 +119,16 @@ private: System::Windows::Forms::Button^  buttonBeenden;
          /// </summary>
          void InitializeComponent(void)
          {
-           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea6 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea7 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea8 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea9 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea10 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-           System::Windows::Forms::DataVisualization::Charting::Legend^  legend6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-           System::Windows::Forms::DataVisualization::Charting::Legend^  legend7 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-           System::Windows::Forms::DataVisualization::Charting::Legend^  legend8 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-           System::Windows::Forms::DataVisualization::Charting::Legend^  legend9 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-           System::Windows::Forms::DataVisualization::Charting::Legend^  legend10 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea5 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+           System::Windows::Forms::DataVisualization::Charting::Legend^  legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+           System::Windows::Forms::DataVisualization::Charting::Legend^  legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+           System::Windows::Forms::DataVisualization::Charting::Legend^  legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+           System::Windows::Forms::DataVisualization::Charting::Legend^  legend4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+           System::Windows::Forms::DataVisualization::Charting::Legend^  legend5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
            this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
            this->buttonBeenden = (gcnew System::Windows::Forms::Button());
            this->comboBoxZeitaufloesung = (gcnew System::Windows::Forms::ComboBox());
@@ -148,142 +148,142 @@ private: System::Windows::Forms::Button^  buttonBeenden;
              | System::Windows::Forms::AnchorStyles::Left)
              | System::Windows::Forms::AnchorStyles::Right));
            this->chart1->BackColor = System::Drawing::Color::LightGoldenrodYellow;
-           chartArea6->AxisX->Crossing = 1.7976931348623157E+308;
-           chartArea6->AxisX->IsLabelAutoFit = false;
-           chartArea6->AxisX->IsMarginVisible = false;
-           chartArea6->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
+           chartArea1->AxisX->Crossing = -1.7976931348623157E+308;
+           chartArea1->AxisX->IsLabelAutoFit = false;
+           chartArea1->AxisX->IsMarginVisible = false;
+           chartArea1->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
              | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
-           chartArea6->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
-           chartArea6->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
-           chartArea6->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
-           chartArea6->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
-           chartArea6->AxisX->ScrollBar->IsPositionedInside = false;
-           chartArea6->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-           chartArea6->AxisX->ScrollBar->Size = 16;
-           chartArea6->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
-           chartArea6->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
-           chartArea6->AxisY->IsLabelAutoFit = false;
-           chartArea6->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
-           chartArea6->AxisY->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+           chartArea1->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+           chartArea1->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
+           chartArea1->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+           chartArea1->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+           chartArea1->AxisX->ScrollBar->IsPositionedInside = false;
+           chartArea1->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+           chartArea1->AxisX->ScrollBar->Size = 16;
+           chartArea1->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
+           chartArea1->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
+           chartArea1->AxisY->IsLabelAutoFit = false;
+           chartArea1->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
+           chartArea1->AxisY->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
              static_cast<System::Byte>(0)));
-           chartArea6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+           chartArea1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
              static_cast<System::Int32>(static_cast<System::Byte>(255)));
-           chartArea6->Name = L"ChartArea1";
-           chartArea6->Visible = false;
-           chartArea7->AxisX->Crossing = 1.7976931348623157E+308;
-           chartArea7->AxisX->IsLabelAutoFit = false;
-           chartArea7->AxisX->IsMarginVisible = false;
-           chartArea7->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
+           chartArea1->Name = L"ChartArea1";
+           chartArea1->Visible = false;
+           chartArea2->AxisX->Crossing = -1.7976931348623157E+308;
+           chartArea2->AxisX->IsLabelAutoFit = false;
+           chartArea2->AxisX->IsMarginVisible = false;
+           chartArea2->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
              | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
-           chartArea7->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
-           chartArea7->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
-           chartArea7->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
-           chartArea7->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
-           chartArea7->AxisX->ScrollBar->IsPositionedInside = false;
-           chartArea7->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-           chartArea7->AxisX->ScrollBar->Size = 16;
-           chartArea7->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
-           chartArea7->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
-           chartArea7->AxisY->IsLabelAutoFit = false;
-           chartArea7->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
-           chartArea7->AxisY->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
-           chartArea7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+           chartArea2->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+           chartArea2->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
+           chartArea2->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+           chartArea2->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+           chartArea2->AxisX->ScrollBar->IsPositionedInside = false;
+           chartArea2->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+           chartArea2->AxisX->ScrollBar->Size = 16;
+           chartArea2->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
+           chartArea2->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
+           chartArea2->AxisY->IsLabelAutoFit = false;
+           chartArea2->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
+           chartArea2->AxisY->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
+           chartArea2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
              static_cast<System::Int32>(static_cast<System::Byte>(255)));
-           chartArea7->Name = L"ChartArea2";
-           chartArea7->Visible = false;
-           chartArea8->AxisX->Crossing = 1.7976931348623157E+308;
-           chartArea8->AxisX->IsLabelAutoFit = false;
-           chartArea8->AxisX->IsMarginVisible = false;
-           chartArea8->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
+           chartArea2->Name = L"ChartArea2";
+           chartArea2->Visible = false;
+           chartArea3->AxisX->Crossing = -1.7976931348623157E+308;
+           chartArea3->AxisX->IsLabelAutoFit = false;
+           chartArea3->AxisX->IsMarginVisible = false;
+           chartArea3->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
              | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
-           chartArea8->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
-           chartArea8->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
-           chartArea8->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
-           chartArea8->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
-           chartArea8->AxisX->ScrollBar->IsPositionedInside = false;
-           chartArea8->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-           chartArea8->AxisX->ScrollBar->Size = 16;
-           chartArea8->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
-           chartArea8->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
-           chartArea8->AxisY->IsLabelAutoFit = false;
-           chartArea8->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
-           chartArea8->AxisY->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
-           chartArea8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+           chartArea3->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+           chartArea3->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
+           chartArea3->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+           chartArea3->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+           chartArea3->AxisX->ScrollBar->IsPositionedInside = false;
+           chartArea3->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+           chartArea3->AxisX->ScrollBar->Size = 16;
+           chartArea3->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
+           chartArea3->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
+           chartArea3->AxisY->IsLabelAutoFit = false;
+           chartArea3->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
+           chartArea3->AxisY->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
+           chartArea3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
              static_cast<System::Int32>(static_cast<System::Byte>(255)));
-           chartArea8->Name = L"ChartArea3";
-           chartArea8->Visible = false;
-           chartArea9->AxisX->Crossing = 1.7976931348623157E+308;
-           chartArea9->AxisX->IsLabelAutoFit = false;
-           chartArea9->AxisX->IsMarginVisible = false;
-           chartArea9->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
+           chartArea3->Name = L"ChartArea3";
+           chartArea3->Visible = false;
+           chartArea4->AxisX->Crossing = -1.7976931348623157E+308;
+           chartArea4->AxisX->IsLabelAutoFit = false;
+           chartArea4->AxisX->IsMarginVisible = false;
+           chartArea4->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
              | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
-           chartArea9->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
-           chartArea9->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
-           chartArea9->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
-           chartArea9->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
-           chartArea9->AxisX->ScrollBar->IsPositionedInside = false;
-           chartArea9->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-           chartArea9->AxisX->ScrollBar->Size = 16;
-           chartArea9->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
-           chartArea9->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
-           chartArea9->AxisY->IsLabelAutoFit = false;
-           chartArea9->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
-           chartArea9->AxisY->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
-           chartArea9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+           chartArea4->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+           chartArea4->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
+           chartArea4->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+           chartArea4->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+           chartArea4->AxisX->ScrollBar->IsPositionedInside = false;
+           chartArea4->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+           chartArea4->AxisX->ScrollBar->Size = 16;
+           chartArea4->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
+           chartArea4->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
+           chartArea4->AxisY->IsLabelAutoFit = false;
+           chartArea4->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
+           chartArea4->AxisY->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
+           chartArea4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
              static_cast<System::Int32>(static_cast<System::Byte>(255)));
-           chartArea9->Name = L"ChartArea4";
-           chartArea9->Visible = false;
-           chartArea10->AxisX->Crossing = 1.7976931348623157E+308;
-           chartArea10->AxisX->IsLabelAutoFit = false;
-           chartArea10->AxisX->IsMarginVisible = false;
-           chartArea10->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
+           chartArea4->Name = L"ChartArea4";
+           chartArea4->Visible = false;
+           chartArea5->AxisX->Crossing = -1.7976931348623157E+308;
+           chartArea5->AxisX->IsLabelAutoFit = false;
+           chartArea5->AxisX->IsMarginVisible = false;
+           chartArea5->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
              | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap));
-           chartArea10->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
-           chartArea10->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
-           chartArea10->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
-           chartArea10->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
-           chartArea10->AxisX->ScrollBar->IsPositionedInside = false;
-           chartArea10->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-           chartArea10->AxisX->ScrollBar->Size = 16;
-           chartArea10->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
-           chartArea10->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
-           chartArea10->AxisY->IsLabelAutoFit = false;
-           chartArea10->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
-           chartArea10->AxisY->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
-           chartArea10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+           chartArea5->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+           chartArea5->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
+           chartArea5->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+           chartArea5->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+           chartArea5->AxisX->ScrollBar->IsPositionedInside = false;
+           chartArea5->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+           chartArea5->AxisX->ScrollBar->Size = 16;
+           chartArea5->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
+           chartArea5->AxisX->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
+           chartArea5->AxisY->IsLabelAutoFit = false;
+           chartArea5->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
+           chartArea5->AxisY->TitleFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold));
+           chartArea5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
              static_cast<System::Int32>(static_cast<System::Byte>(255)));
-           chartArea10->Name = L"ChartArea5";
-           chartArea10->Visible = false;
-           this->chart1->ChartAreas->Add(chartArea6);
-           this->chart1->ChartAreas->Add(chartArea7);
-           this->chart1->ChartAreas->Add(chartArea8);
-           this->chart1->ChartAreas->Add(chartArea9);
-           this->chart1->ChartAreas->Add(chartArea10);
-           legend6->DockedToChartArea = L"ChartArea1";
-           legend6->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-           legend6->IsDockedInsideChartArea = false;
-           legend6->Name = L"Legend1";
-           legend7->DockedToChartArea = L"ChartArea2";
-           legend7->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-           legend7->IsDockedInsideChartArea = false;
-           legend7->Name = L"Legend2";
-           legend8->DockedToChartArea = L"ChartArea3";
-           legend8->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-           legend8->IsDockedInsideChartArea = false;
-           legend8->Name = L"Legend3";
-           legend9->DockedToChartArea = L"ChartArea4";
-           legend9->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-           legend9->IsDockedInsideChartArea = false;
-           legend9->Name = L"Legend4";
-           legend10->DockedToChartArea = L"ChartArea5";
-           legend10->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-           legend10->IsDockedInsideChartArea = false;
-           legend10->Name = L"Legend5";
-           this->chart1->Legends->Add(legend6);
-           this->chart1->Legends->Add(legend7);
-           this->chart1->Legends->Add(legend8);
-           this->chart1->Legends->Add(legend9);
-           this->chart1->Legends->Add(legend10);
+           chartArea5->Name = L"ChartArea5";
+           chartArea5->Visible = false;
+           this->chart1->ChartAreas->Add(chartArea1);
+           this->chart1->ChartAreas->Add(chartArea2);
+           this->chart1->ChartAreas->Add(chartArea3);
+           this->chart1->ChartAreas->Add(chartArea4);
+           this->chart1->ChartAreas->Add(chartArea5);
+           legend1->DockedToChartArea = L"ChartArea1";
+           legend1->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+           legend1->IsDockedInsideChartArea = false;
+           legend1->Name = L"Legend1";
+           legend2->DockedToChartArea = L"ChartArea2";
+           legend2->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+           legend2->IsDockedInsideChartArea = false;
+           legend2->Name = L"Legend2";
+           legend3->DockedToChartArea = L"ChartArea3";
+           legend3->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+           legend3->IsDockedInsideChartArea = false;
+           legend3->Name = L"Legend3";
+           legend4->DockedToChartArea = L"ChartArea4";
+           legend4->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+           legend4->IsDockedInsideChartArea = false;
+           legend4->Name = L"Legend4";
+           legend5->DockedToChartArea = L"ChartArea5";
+           legend5->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+           legend5->IsDockedInsideChartArea = false;
+           legend5->Name = L"Legend5";
+           this->chart1->Legends->Add(legend1);
+           this->chart1->Legends->Add(legend2);
+           this->chart1->Legends->Add(legend3);
+           this->chart1->Legends->Add(legend4);
+           this->chart1->Legends->Add(legend5);
            this->chart1->Location = System::Drawing::Point(0, 0);
            this->chart1->Margin = System::Windows::Forms::Padding(0);
            this->chart1->Name = L"chart1";
@@ -355,6 +355,7 @@ private: System::Windows::Forms::Button^  buttonBeenden;
            // 
            // ctlEndDate
            // 
+           this->ctlEndDate->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
            this->ctlEndDate->Format = System::Windows::Forms::DateTimePickerFormat::Short;
            this->ctlEndDate->Location = System::Drawing::Point(460, 619);
            this->ctlEndDate->Name = L"ctlEndDate";
@@ -364,6 +365,7 @@ private: System::Windows::Forms::Button^  buttonBeenden;
            // 
            // ctlStartDate
            // 
+           this->ctlStartDate->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
            this->ctlStartDate->Format = System::Windows::Forms::DateTimePickerFormat::Short;
            this->ctlStartDate->Location = System::Drawing::Point(370, 619);
            this->ctlStartDate->Name = L"ctlStartDate";
@@ -1025,6 +1027,11 @@ private: void updateDateControlLimits()
 
 private: Void applyDateRange()
 {
+  if (ctlStartDate->Value > ctlEndDate->Value)
+  {
+    ctlEndDate->Value = ctlStartDate->Value;
+  }
+
   m_startTimeDisplay = ctlStartDate->Value;
   m_endTimeDisplay = ctlEndDate->Value;
 
