@@ -1103,6 +1103,20 @@ private: System::Void checkBoxZeitraum_CheckedChanged(System::Object^  sender, S
   ctlEndDate->Visible = checkBoxZeitraum->Checked;
   lblStartDateDisplay->Visible = checkBoxZeitraum->Checked;
   lblEndDateDisplay->Visible = checkBoxZeitraum->Checked;
+
+  if (!checkBoxZeitraum->Checked)
+  {
+    m_startTimeDisplay = m_startTime;
+    m_endTimeDisplay = m_endTime;
+  }
+  else
+  {
+    m_startTimeDisplay = ctlStartDate->Value;
+    m_endTimeDisplay = ctlEndDate->Value;
+  }
+
+  ApplyAxisFormatting();
+  refreshSeries();
 }
 
 private: System::Void comboBoxZeitaufloesung_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e)
