@@ -108,8 +108,8 @@ private: System::Windows::Forms::DateTimePicker^  ctlEndDate;
 private: System::Windows::Forms::DateTimePicker^  ctlStartDate;
 private: System::Windows::Forms::Label^  lblStartDateDisplay;
 private: System::Windows::Forms::Label^  lblEndDateDisplay;
-
-
+private: System::Windows::Forms::Button^  buttonExportZeitreihen;
+private: System::Windows::Forms::SaveFileDialog^  saveFileDialogZeitreihen;
 private: System::Windows::Forms::Button^  buttonBeenden;
 
 #pragma region Windows Form Designer generated code
@@ -139,6 +139,8 @@ private: System::Windows::Forms::Button^  buttonBeenden;
            this->ctlStartDate = (gcnew System::Windows::Forms::DateTimePicker());
            this->lblStartDateDisplay = (gcnew System::Windows::Forms::Label());
            this->lblEndDateDisplay = (gcnew System::Windows::Forms::Label());
+           this->buttonExportZeitreihen = (gcnew System::Windows::Forms::Button());
+           this->saveFileDialogZeitreihen = (gcnew System::Windows::Forms::SaveFileDialog());
            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
            this->SuspendLayout();
            // 
@@ -148,7 +150,7 @@ private: System::Windows::Forms::Button^  buttonBeenden;
              | System::Windows::Forms::AnchorStyles::Left)
              | System::Windows::Forms::AnchorStyles::Right));
            this->chart1->BackColor = System::Drawing::Color::LightGoldenrodYellow;
-           chartArea1->AxisX->Crossing = -1.7976931348623157E+308;
+           chartArea1->AxisX->Crossing = 1.7976931348623157E+308;
            chartArea1->AxisX->IsLabelAutoFit = false;
            chartArea1->AxisX->IsMarginVisible = false;
            chartArea1->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
@@ -170,7 +172,7 @@ private: System::Windows::Forms::Button^  buttonBeenden;
              static_cast<System::Int32>(static_cast<System::Byte>(255)));
            chartArea1->Name = L"ChartArea1";
            chartArea1->Visible = false;
-           chartArea2->AxisX->Crossing = -1.7976931348623157E+308;
+           chartArea2->AxisX->Crossing = 1.7976931348623157E+308;
            chartArea2->AxisX->IsLabelAutoFit = false;
            chartArea2->AxisX->IsMarginVisible = false;
            chartArea2->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
@@ -191,7 +193,7 @@ private: System::Windows::Forms::Button^  buttonBeenden;
              static_cast<System::Int32>(static_cast<System::Byte>(255)));
            chartArea2->Name = L"ChartArea2";
            chartArea2->Visible = false;
-           chartArea3->AxisX->Crossing = -1.7976931348623157E+308;
+           chartArea3->AxisX->Crossing = 1.7976931348623157E+308;
            chartArea3->AxisX->IsLabelAutoFit = false;
            chartArea3->AxisX->IsMarginVisible = false;
            chartArea3->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
@@ -212,7 +214,7 @@ private: System::Windows::Forms::Button^  buttonBeenden;
              static_cast<System::Int32>(static_cast<System::Byte>(255)));
            chartArea3->Name = L"ChartArea3";
            chartArea3->Visible = false;
-           chartArea4->AxisX->Crossing = -1.7976931348623157E+308;
+           chartArea4->AxisX->Crossing = 1.7976931348623157E+308;
            chartArea4->AxisX->IsLabelAutoFit = false;
            chartArea4->AxisX->IsMarginVisible = false;
            chartArea4->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
@@ -233,7 +235,7 @@ private: System::Windows::Forms::Button^  buttonBeenden;
              static_cast<System::Int32>(static_cast<System::Byte>(255)));
            chartArea4->Name = L"ChartArea4";
            chartArea4->Visible = false;
-           chartArea5->AxisX->Crossing = -1.7976931348623157E+308;
+           chartArea5->AxisX->Crossing = 1.7976931348623157E+308;
            chartArea5->AxisX->IsLabelAutoFit = false;
            chartArea5->AxisX->IsMarginVisible = false;
            chartArea5->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>(((System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont)
@@ -393,6 +395,22 @@ private: System::Windows::Forms::Button^  buttonBeenden;
            this->lblEndDateDisplay->TabIndex = 29;
            this->lblEndDateDisplay->Text = L"Enddatum";
            // 
+           // buttonExportZeitreihen
+           // 
+           this->buttonExportZeitreihen->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+           this->buttonExportZeitreihen->Location = System::Drawing::Point(581, 619);
+           this->buttonExportZeitreihen->Name = L"buttonExportZeitreihen";
+           this->buttonExportZeitreihen->Size = System::Drawing::Size(120, 37);
+           this->buttonExportZeitreihen->TabIndex = 26;
+           this->buttonExportZeitreihen->Text = L"Export Zeitreihen";
+           this->buttonExportZeitreihen->UseVisualStyleBackColor = true;
+           this->buttonExportZeitreihen->Click += gcnew System::EventHandler(this, &Diagramm::buttonExportZeitreihen_Click);
+           // 
+           // saveFileDialogZeitreihen
+           // 
+           this->saveFileDialogZeitreihen->Filter = L"(*.csv)|*.csv";
+           this->saveFileDialogZeitreihen->Title = L"Export der gewählten Zeitreihen ";
+           // 
            // Diagramm
            // 
            this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -408,6 +426,7 @@ private: System::Windows::Forms::Button^  buttonBeenden;
            this->Controls->Add(this->buttonAusblenden);
            this->Controls->Add(this->label1);
            this->Controls->Add(this->comboBoxZeitaufloesung);
+           this->Controls->Add(this->buttonExportZeitreihen);
            this->Controls->Add(this->buttonBeenden);
            this->Controls->Add(this->chart1);
            this->KeyPreview = true;
@@ -1184,6 +1203,55 @@ private: System::Void chart1_MouseClick(System::Object^  sender, System::Windows
 private: System::Void ctlStartEndDate_ValueChanged(System::Object^  sender, System::EventArgs^  e)
 {
   applyDateRange();
+}
+
+private: System::Void buttonExportZeitreihen_Click(System::Object^  sender, System::EventArgs^  e) 
+{
+  String ^ STR;
+  int      i, j;
+
+  if ( saveFileDialogZeitreihen->ShowDialog() != System::Windows::Forms::DialogResult::OK )
+    return;
+
+  if ( m_seriesAnz == 0 )
+    return;
+
+  System::IO::StreamWriter ^ pWriter = gcnew System::IO::StreamWriter ( saveFileDialogZeitreihen->FileName );
+
+  STR = "Time;";
+  for ( i = 0; i < m_seriesAnz; i++ )
+  {
+    if ( i < m_seriesAnz - 1 )
+     STR = String::Concat( STR, m_seriesText[i], ";" );
+    else
+      STR = String::Concat( STR, m_seriesText[i], "\n");
+  }
+
+  pWriter->Write( STR );
+
+  for ( j = 0; j < m_valueAnz; j++ )
+  {
+    DateTime ^ dateTime = getTimePosition ( j );
+    STR = String::Concat ( dateTime->ToString(), ";" );
+
+    for ( i = 0; i < m_seriesAnz; i++ )
+    {
+      if (m_showSeries[i] == true)
+      {
+        List<double> ^ values = dynamic_cast<List<double>^>(m_values[i]);
+        if ( j < values->Count )
+          STR = String::Concat ( STR, Convert::ToString( values[j] ) );
+      }
+
+      if ( i < m_seriesAnz - 1 )
+        STR = String::Concat( STR, ";" );
+      else
+        STR = String::Concat( STR, "\n" );
+    }
+    pWriter->Write( STR );
+  }
+  pWriter->Flush();
+  pWriter->Close();
 }
 
 #pragma endregion
