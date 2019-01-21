@@ -1207,9 +1207,6 @@ private: System::Void ctlStartEndDate_ValueChanged(System::Object^  sender, Syst
 
 private: System::Void buttonExportZeitreihen_Click(System::Object^  sender, System::EventArgs^  e) 
 {
-  String ^ STR;
-  int      i, j;
-
   if ( saveFileDialogZeitreihen->ShowDialog() != System::Windows::Forms::DialogResult::OK )
     return;
 
@@ -1218,36 +1215,50 @@ private: System::Void buttonExportZeitreihen_Click(System::Object^  sender, Syst
 
   System::IO::StreamWriter ^ pWriter = gcnew System::IO::StreamWriter ( saveFileDialogZeitreihen->FileName );
 
-  STR = "Time;";
-  for ( i = 0; i < m_seriesAnz; i++ )
+  String^ STR("Time;");
+
+  for (int i = 0; i < m_seriesAnz; i++ )
   {
-    if ( i < m_seriesAnz - 1 )
-     STR = String::Concat( STR, m_seriesText[i], ";" );
-    else
-      STR = String::Concat( STR, m_seriesText[i], "\n");
+    if (m_showSeries[i] == true)
+    {
+      STR = String::Concat(STR, m_seriesText[i], ";");
+    }
   }
 
-  pWriter->Write( STR );
+  STR = String::Concat(STR, "\n");
 
-  for ( j = 0; j < m_valueAnz; j++ )
+  pWriter->Write(STR);
+
+  int        anz;
+  List<int>^ dateTimeIndices = gcnew List<int>;
+  ArrayList^ valuesList = gcnew ArrayList;
+
+  for (int i = 0; i < m_seriesAnz; i++)
   {
-    DateTime ^ dateTime = getTimePosition ( j );
-    STR = String::Concat ( dateTime->ToString(), ";" );
+    List<double>^ values = gcnew List<double>;
 
-    for ( i = 0; i < m_seriesAnz; i++ )
+    anz = getValues(i, m_aggregation, m_aggregationTyp[m_chartList[i]], values, dateTimeIndices);
+    valuesList->Add(values);
+  }
+
+  for (int j = 0; j < anz; j++ )
+  {
+    DateTime ^ dateTime = getTimePosition(dateTimeIndices[j]);
+    STR = String::Concat(dateTime->ToString(), ";");
+
+    for (int i = 0; i < m_seriesAnz; i++ )
     {
       if (m_showSeries[i] == true)
       {
-        List<double> ^ values = dynamic_cast<List<double>^>(m_values[i]);
-        if ( j < values->Count )
-          STR = String::Concat ( STR, Convert::ToString( values[j] ) );
-      }
+        List<double> ^ values = dynamic_cast<List<double>^>(valuesList[i]);
 
-      if ( i < m_seriesAnz - 1 )
-        STR = String::Concat( STR, ";" );
-      else
-        STR = String::Concat( STR, "\n" );
+        if ( j < values->Count )
+          STR = String::Concat(STR, Convert::ToString(values[j]), ";");
+      }
     }
+
+    STR = String::Concat( STR, "\n" );
+
     pWriter->Write( STR );
   }
   pWriter->Flush();
