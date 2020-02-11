@@ -51,6 +51,8 @@ public:
 
     //      comboBoxZeitaufloesung->SelectedIndex = 0;
     m_aggregation = AGGREGATION::NONE;
+
+		m_enableMouseWheel = false;
   }
 
 protected:
@@ -86,6 +88,7 @@ private:
 
   bool        m_hasDate;
   bool        m_hasTime;
+	bool        m_enableMouseWheel;
 
   List<bool>    ^ m_showSeries;
   List<String^> ^ m_seriesText;
@@ -1079,6 +1082,9 @@ private: System::Void Diagramm_KeyDown(System::Object^  sender, System::Windows:
 
 private: System::Void Diagramm_MouseWheel(System::Object^  sender, System::Windows::Forms::MouseEventArgs^ e)
 {
+	if ( !m_enableMouseWheel )
+		return;
+
   // Determine a valid chart area
   for (int i = 0; i < m_chartAnzMax; ++i)
   {
