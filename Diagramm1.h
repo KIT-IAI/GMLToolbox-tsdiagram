@@ -12,6 +12,8 @@ using namespace System::Drawing;
 using namespace System::Diagnostics;
 using namespace System::Windows::Forms::DataVisualization::Charting;
 
+#include "Jahreswerte.h"
+
 /// <summary>
 /// Zusammenfassung für Diagramm
 /// </summary>
@@ -50,6 +52,7 @@ public:
 
     m_showSeries   = gcnew List<bool>;
     m_seriesText   = gcnew List<String ^>;
+    m_seriesUOM    = gcnew List<String ^>;
 		m_liniendicken = gcnew List<double>;
 		m_farben       = gcnew List<System::Drawing::Color>;
 		m_lineStyles   = gcnew List<ChartDashStyle>;
@@ -107,6 +110,7 @@ private:
 
   List<bool>                   ^ m_showSeries;	   // Legt fest, ob eine bestimmte Zeitreihe im zug. Chart angezeit wird
   List<String^>                ^ m_seriesText;	   // Den einzelnen Zeitreihen zugeordnete Beschreibungstexte
+  List<String^>                ^ m_seriesUOM;      // Den einzelnen Zeitreihen zugeordnete UOM-Strings
 	List<double>                 ^ m_liniendicken;   // Liniendicke der einzelnen Zeitreihen
 	List<ChartDashStyle>         ^ m_lineStyles;     // Linienstil der einzelnen Zeitreihen 
 	List<System::Drawing::Color> ^ m_farben;         // Aktuelle Farben der einzelnen Zeitreihen
@@ -133,6 +137,7 @@ private: System::Windows::Forms::Label^  lblStartDateDisplay;
 private: System::Windows::Forms::Label^  lblEndDateDisplay;
 private: System::Windows::Forms::Button^  buttonExportZeitreihen;
 private: System::Windows::Forms::SaveFileDialog^  saveFileDialogZeitreihen;
+private: System::Windows::Forms::Button^  buttonJahreswerte;
 private: System::Windows::Forms::Button^  buttonBeenden;
 
 #pragma region Windows Form Designer generated code
@@ -142,328 +147,340 @@ private: System::Windows::Forms::Button^  buttonBeenden;
          /// </summary>
          void InitializeComponent(void)
          {
-					 System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = ( gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea () );
-					 System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea2 = ( gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea () );
-					 System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea3 = ( gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea () );
-					 System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea4 = ( gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea () );
-					 System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea5 = ( gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea () );
-					 System::Windows::Forms::DataVisualization::Charting::Legend^  legend1 = ( gcnew System::Windows::Forms::DataVisualization::Charting::Legend () );
-					 System::Windows::Forms::DataVisualization::Charting::Legend^  legend2 = ( gcnew System::Windows::Forms::DataVisualization::Charting::Legend () );
-					 System::Windows::Forms::DataVisualization::Charting::Legend^  legend3 = ( gcnew System::Windows::Forms::DataVisualization::Charting::Legend () );
-					 System::Windows::Forms::DataVisualization::Charting::Legend^  legend4 = ( gcnew System::Windows::Forms::DataVisualization::Charting::Legend () );
-					 System::Windows::Forms::DataVisualization::Charting::Legend^  legend5 = ( gcnew System::Windows::Forms::DataVisualization::Charting::Legend () );
-					 this->chart1 = ( gcnew System::Windows::Forms::DataVisualization::Charting::Chart () );
-					 this->buttonBeenden = ( gcnew System::Windows::Forms::Button () );
-					 this->comboBoxZeitaufloesung = ( gcnew System::Windows::Forms::ComboBox () );
-					 this->label1 = ( gcnew System::Windows::Forms::Label () );
-					 this->buttonAusblenden = ( gcnew System::Windows::Forms::Button () );
-					 this->checkBoxZeitraum = ( gcnew System::Windows::Forms::CheckBox () );
-					 this->ctlEndDate = ( gcnew System::Windows::Forms::DateTimePicker () );
-					 this->ctlStartDate = ( gcnew System::Windows::Forms::DateTimePicker () );
-					 this->lblStartDateDisplay = ( gcnew System::Windows::Forms::Label () );
-					 this->lblEndDateDisplay = ( gcnew System::Windows::Forms::Label () );
-					 this->buttonExportZeitreihen = ( gcnew System::Windows::Forms::Button () );
-					 this->saveFileDialogZeitreihen = ( gcnew System::Windows::Forms::SaveFileDialog () );
-					 ( cli::safe_cast<System::ComponentModel::ISupportInitialize^>( this->chart1 ) )->BeginInit ();
-					 this->SuspendLayout ();
-					 // 
-					 // chart1
-					 // 
-					 this->chart1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( ( ( System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom )
-						 | System::Windows::Forms::AnchorStyles::Left )
-						 | System::Windows::Forms::AnchorStyles::Right ) );
-					 this->chart1->BackColor = System::Drawing::Color::LightGoldenrodYellow;
-					 chartArea1->AxisX->Crossing = 1.7976931348623157E+308;
-					 chartArea1->AxisX->IsLabelAutoFit = false;
-					 chartArea1->AxisX->IsMarginVisible = false;
-					 chartArea1->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>( ( ( System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont )
-						 | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap ) );
-					 chartArea1->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
-					 chartArea1->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
-					 chartArea1->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
-					 chartArea1->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
-					 chartArea1->AxisX->ScrollBar->IsPositionedInside = false;
-					 chartArea1->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-					 chartArea1->AxisX->ScrollBar->Size = 16;
-					 chartArea1->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
-					 chartArea1->AxisX->TitleFont = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
-					 chartArea1->AxisY->IsLabelAutoFit = false;
-					 chartArea1->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
-					 chartArea1->AxisY->TitleFont = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-						 static_cast<System::Byte>( 0 ) ) );
-					 chartArea1->BackColor = System::Drawing::Color::FromArgb ( static_cast<System::Int32>( static_cast<System::Byte>( 192 ) ), static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ),
-						 static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ) );
-					 chartArea1->Name = L"ChartArea1";
-					 chartArea1->Visible = false;
-					 chartArea2->AxisX->Crossing = 1.7976931348623157E+308;
-					 chartArea2->AxisX->IsLabelAutoFit = false;
-					 chartArea2->AxisX->IsMarginVisible = false;
-					 chartArea2->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>( ( ( System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont )
-						 | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap ) );
-					 chartArea2->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
-					 chartArea2->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
-					 chartArea2->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
-					 chartArea2->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
-					 chartArea2->AxisX->ScrollBar->IsPositionedInside = false;
-					 chartArea2->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-					 chartArea2->AxisX->ScrollBar->Size = 16;
-					 chartArea2->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
-					 chartArea2->AxisX->TitleFont = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
-					 chartArea2->AxisY->IsLabelAutoFit = false;
-					 chartArea2->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
-					 chartArea2->AxisY->TitleFont = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
-					 chartArea2->BackColor = System::Drawing::Color::FromArgb ( static_cast<System::Int32>( static_cast<System::Byte>( 192 ) ), static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ),
-						 static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ) );
-					 chartArea2->Name = L"ChartArea2";
-					 chartArea2->Visible = false;
-					 chartArea3->AxisX->Crossing = 1.7976931348623157E+308;
-					 chartArea3->AxisX->IsLabelAutoFit = false;
-					 chartArea3->AxisX->IsMarginVisible = false;
-					 chartArea3->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>( ( ( System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont )
-						 | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap ) );
-					 chartArea3->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
-					 chartArea3->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
-					 chartArea3->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
-					 chartArea3->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
-					 chartArea3->AxisX->ScrollBar->IsPositionedInside = false;
-					 chartArea3->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-					 chartArea3->AxisX->ScrollBar->Size = 16;
-					 chartArea3->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
-					 chartArea3->AxisX->TitleFont = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
-					 chartArea3->AxisY->IsLabelAutoFit = false;
-					 chartArea3->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
-					 chartArea3->AxisY->TitleFont = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
-					 chartArea3->BackColor = System::Drawing::Color::FromArgb ( static_cast<System::Int32>( static_cast<System::Byte>( 192 ) ), static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ),
-						 static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ) );
-					 chartArea3->Name = L"ChartArea3";
-					 chartArea3->Visible = false;
-					 chartArea4->AxisX->Crossing = 1.7976931348623157E+308;
-					 chartArea4->AxisX->IsLabelAutoFit = false;
-					 chartArea4->AxisX->IsMarginVisible = false;
-					 chartArea4->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>( ( ( System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont )
-						 | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap ) );
-					 chartArea4->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
-					 chartArea4->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
-					 chartArea4->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
-					 chartArea4->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
-					 chartArea4->AxisX->ScrollBar->IsPositionedInside = false;
-					 chartArea4->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-					 chartArea4->AxisX->ScrollBar->Size = 16;
-					 chartArea4->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
-					 chartArea4->AxisX->TitleFont = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
-					 chartArea4->AxisY->IsLabelAutoFit = false;
-					 chartArea4->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
-					 chartArea4->AxisY->TitleFont = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
-					 chartArea4->BackColor = System::Drawing::Color::FromArgb ( static_cast<System::Int32>( static_cast<System::Byte>( 192 ) ), static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ),
-						 static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ) );
-					 chartArea4->Name = L"ChartArea4";
-					 chartArea4->Visible = false;
-					 chartArea5->AxisX->Crossing = 1.7976931348623157E+308;
-					 chartArea5->AxisX->IsLabelAutoFit = false;
-					 chartArea5->AxisX->IsMarginVisible = false;
-					 chartArea5->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>( ( ( System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont )
-						 | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap ) );
-					 chartArea5->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
-					 chartArea5->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
-					 chartArea5->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
-					 chartArea5->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
-					 chartArea5->AxisX->ScrollBar->IsPositionedInside = false;
-					 chartArea5->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
-					 chartArea5->AxisX->ScrollBar->Size = 16;
-					 chartArea5->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
-					 chartArea5->AxisX->TitleFont = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
-					 chartArea5->AxisY->IsLabelAutoFit = false;
-					 chartArea5->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
-					 chartArea5->AxisY->TitleFont = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
-					 chartArea5->BackColor = System::Drawing::Color::FromArgb ( static_cast<System::Int32>( static_cast<System::Byte>( 192 ) ), static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ),
-						 static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ) );
-					 chartArea5->Name = L"ChartArea5";
-					 chartArea5->Visible = false;
-					 this->chart1->ChartAreas->Add ( chartArea1 );
-					 this->chart1->ChartAreas->Add ( chartArea2 );
-					 this->chart1->ChartAreas->Add ( chartArea3 );
-					 this->chart1->ChartAreas->Add ( chartArea4 );
-					 this->chart1->ChartAreas->Add ( chartArea5 );
-					 legend1->DockedToChartArea = L"ChartArea1";
-					 legend1->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-					 legend1->IsDockedInsideChartArea = false;
-					 legend1->Name = L"Legend1";
-					 legend2->DockedToChartArea = L"ChartArea2";
-					 legend2->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-					 legend2->IsDockedInsideChartArea = false;
-					 legend2->Name = L"Legend2";
-					 legend3->DockedToChartArea = L"ChartArea3";
-					 legend3->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-					 legend3->IsDockedInsideChartArea = false;
-					 legend3->Name = L"Legend3";
-					 legend4->DockedToChartArea = L"ChartArea4";
-					 legend4->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-					 legend4->IsDockedInsideChartArea = false;
-					 legend4->Name = L"Legend4";
-					 legend5->DockedToChartArea = L"ChartArea5";
-					 legend5->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
-					 legend5->IsDockedInsideChartArea = false;
-					 legend5->Name = L"Legend5";
-					 this->chart1->Legends->Add ( legend1 );
-					 this->chart1->Legends->Add ( legend2 );
-					 this->chart1->Legends->Add ( legend3 );
-					 this->chart1->Legends->Add ( legend4 );
-					 this->chart1->Legends->Add ( legend5 );
-					 this->chart1->Location = System::Drawing::Point ( 0, 0 );
-					 this->chart1->Margin = System::Windows::Forms::Padding ( 0 );
-					 this->chart1->Name = L"chart1";
-					 this->chart1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::Excel;
-					 this->chart1->Size = System::Drawing::Size ( 868, 598 );
-					 this->chart1->TabIndex = 0;
-					 this->chart1->Text = L"chart1";
-					 this->chart1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler ( this, &Diagramm::chart1_KeyDown );
-					 this->chart1->MouseClick += gcnew System::Windows::Forms::MouseEventHandler ( this, &Diagramm::chart1_MouseClick );
-					 this->chart1->PreviewKeyDown += gcnew System::Windows::Forms::PreviewKeyDownEventHandler ( this, &Diagramm::chart1_PreviewKeyDown );
-					 // 
-					 // buttonBeenden
-					 // 
-					 this->buttonBeenden->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right ) );
-					 this->buttonBeenden->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-					 this->buttonBeenden->Location = System::Drawing::Point ( 730, 619 );
-					 this->buttonBeenden->Name = L"buttonBeenden";
-					 this->buttonBeenden->Size = System::Drawing::Size ( 120, 37 );
-					 this->buttonBeenden->TabIndex = 1;
-					 this->buttonBeenden->Text = L"Schließen";
-					 this->buttonBeenden->UseVisualStyleBackColor = true;
-					 this->buttonBeenden->Click += gcnew System::EventHandler ( this, &Diagramm::buttonBeenden_Click );
-					 // 
-					 // comboBoxZeitaufloesung
-					 // 
-					 this->comboBoxZeitaufloesung->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
-					 this->comboBoxZeitaufloesung->FormattingEnabled = true;
-					 this->comboBoxZeitaufloesung->Items->AddRange ( gcnew cli::array< System::Object^  > ( 4 ) { L"Stunden", L"Tage", L"Wochen", L"Monate" } );
-					 this->comboBoxZeitaufloesung->Location = System::Drawing::Point ( 12, 619 );
-					 this->comboBoxZeitaufloesung->Name = L"comboBoxZeitaufloesung";
-					 this->comboBoxZeitaufloesung->Size = System::Drawing::Size ( 121, 21 );
-					 this->comboBoxZeitaufloesung->TabIndex = 2;
-					 this->comboBoxZeitaufloesung->SelectedIndexChanged += gcnew System::EventHandler ( this, &Diagramm::comboBoxZeitaufloesung_SelectedIndexChanged );
-					 // 
-					 // label1
-					 // 
-					 this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
-					 this->label1->AutoSize = true;
-					 this->label1->Location = System::Drawing::Point ( 9, 643 );
-					 this->label1->Name = L"label1";
-					 this->label1->Size = System::Drawing::Size ( 97, 13 );
-					 this->label1->TabIndex = 3;
-					 this->label1->Text = L"Zeitliche Auflösung";
-					 // 
-					 // buttonAusblenden
-					 // 
-					 this->buttonAusblenden->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
-					 this->buttonAusblenden->Location = System::Drawing::Point ( 150, 619 );
-					 this->buttonAusblenden->Name = L"buttonAusblenden";
-					 this->buttonAusblenden->Size = System::Drawing::Size ( 120, 37 );
-					 this->buttonAusblenden->TabIndex = 13;
-					 this->buttonAusblenden->Text = L"Einstellungen";
-					 this->buttonAusblenden->UseVisualStyleBackColor = true;
-					 this->buttonAusblenden->Click += gcnew System::EventHandler ( this, &Diagramm::buttonAusblenden_Click );
-					 // 
-					 // checkBoxZeitraum
-					 // 
-					 this->checkBoxZeitraum->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
-					 this->checkBoxZeitraum->AutoSize = true;
-					 this->checkBoxZeitraum->Checked = true;
-					 this->checkBoxZeitraum->CheckState = System::Windows::Forms::CheckState::Checked;
-					 this->checkBoxZeitraum->Location = System::Drawing::Point ( 289, 630 );
-					 this->checkBoxZeitraum->Margin = System::Windows::Forms::Padding ( 2 );
-					 this->checkBoxZeitraum->Name = L"checkBoxZeitraum";
-					 this->checkBoxZeitraum->Size = System::Drawing::Size ( 67, 17 );
-					 this->checkBoxZeitraum->TabIndex = 14;
-					 this->checkBoxZeitraum->Text = L"Zeitraum";
-					 this->checkBoxZeitraum->UseVisualStyleBackColor = true;
-					 this->checkBoxZeitraum->CheckedChanged += gcnew System::EventHandler ( this, &Diagramm::checkBoxZeitraum_CheckedChanged );
-					 // 
-					 // ctlEndDate
-					 // 
-					 this->ctlEndDate->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
-					 this->ctlEndDate->Format = System::Windows::Forms::DateTimePickerFormat::Short;
-					 this->ctlEndDate->Location = System::Drawing::Point ( 460, 619 );
-					 this->ctlEndDate->Name = L"ctlEndDate";
-					 this->ctlEndDate->Size = System::Drawing::Size ( 84, 20 );
-					 this->ctlEndDate->TabIndex = 27;
-					 this->ctlEndDate->ValueChanged += gcnew System::EventHandler ( this, &Diagramm::ctlStartEndDate_ValueChanged );
-					 // 
-					 // ctlStartDate
-					 // 
-					 this->ctlStartDate->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
-					 this->ctlStartDate->Format = System::Windows::Forms::DateTimePickerFormat::Short;
-					 this->ctlStartDate->Location = System::Drawing::Point ( 370, 619 );
-					 this->ctlStartDate->Name = L"ctlStartDate";
-					 this->ctlStartDate->Size = System::Drawing::Size ( 84, 20 );
-					 this->ctlStartDate->TabIndex = 26;
-					 this->ctlStartDate->ValueChanged += gcnew System::EventHandler ( this, &Diagramm::ctlStartEndDate_ValueChanged );
-					 // 
-					 // lblStartDateDisplay
-					 // 
-					 this->lblStartDateDisplay->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
-					 this->lblStartDateDisplay->AutoSize = true;
-					 this->lblStartDateDisplay->Location = System::Drawing::Point ( 370, 643 );
-					 this->lblStartDateDisplay->Name = L"lblStartDateDisplay";
-					 this->lblStartDateDisplay->Size = System::Drawing::Size ( 75, 13 );
-					 this->lblStartDateDisplay->TabIndex = 28;
-					 this->lblStartDateDisplay->Text = L"Anfangsdatum";
-					 // 
-					 // lblEndDateDisplay
-					 // 
-					 this->lblEndDateDisplay->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
-					 this->lblEndDateDisplay->AutoSize = true;
-					 this->lblEndDateDisplay->Location = System::Drawing::Point ( 460, 643 );
-					 this->lblEndDateDisplay->Name = L"lblEndDateDisplay";
-					 this->lblEndDateDisplay->Size = System::Drawing::Size ( 55, 13 );
-					 this->lblEndDateDisplay->TabIndex = 29;
-					 this->lblEndDateDisplay->Text = L"Enddatum";
-					 // 
-					 // buttonExportZeitreihen
-					 // 
-					 this->buttonExportZeitreihen->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
-					 this->buttonExportZeitreihen->Location = System::Drawing::Point ( 581, 619 );
-					 this->buttonExportZeitreihen->Name = L"buttonExportZeitreihen";
-					 this->buttonExportZeitreihen->Size = System::Drawing::Size ( 120, 37 );
-					 this->buttonExportZeitreihen->TabIndex = 26;
-					 this->buttonExportZeitreihen->Text = L"Export Zeitreihen";
-					 this->buttonExportZeitreihen->UseVisualStyleBackColor = true;
-					 this->buttonExportZeitreihen->Click += gcnew System::EventHandler ( this, &Diagramm::buttonExportZeitreihen_Click );
-					 // 
-					 // saveFileDialogZeitreihen
-					 // 
-					 this->saveFileDialogZeitreihen->Filter = L"(*.csv)|*.csv";
-					 this->saveFileDialogZeitreihen->Title = L"Export der gewählten Zeitreihen ";
-					 // 
-					 // Diagramm
-					 // 
-					 this->AutoScaleDimensions = System::Drawing::SizeF ( 6, 13 );
-					 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-					 this->AutoScroll = true;
-					 this->CancelButton = this->buttonBeenden;
-					 this->ClientSize = System::Drawing::Size ( 869, 676 );
-					 this->Controls->Add ( this->lblEndDateDisplay );
-					 this->Controls->Add ( this->lblStartDateDisplay );
-					 this->Controls->Add ( this->ctlEndDate );
-					 this->Controls->Add ( this->ctlStartDate );
-					 this->Controls->Add ( this->checkBoxZeitraum );
-					 this->Controls->Add ( this->buttonAusblenden );
-					 this->Controls->Add ( this->label1 );
-					 this->Controls->Add ( this->comboBoxZeitaufloesung );
-					 this->Controls->Add ( this->buttonExportZeitreihen );
-					 this->Controls->Add ( this->buttonBeenden );
-					 this->Controls->Add ( this->chart1 );
-					 this->KeyPreview = true;
-					 this->Name = L"Diagramm";
-					 this->Text = L"Diagramm";
-					 this->Shown += gcnew System::EventHandler ( this, &Diagramm::Diagramm_Shown );
-					 this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler ( this, &Diagramm::Diagramm_KeyDown );
-					 this->MouseWheel += gcnew System::Windows::Forms::MouseEventHandler ( this, &Diagramm::Diagramm_MouseWheel );
-					 ( cli::safe_cast<System::ComponentModel::ISupportInitialize^>( this->chart1 ) )->EndInit ();
-					 this->ResumeLayout ( false );
-					 this->PerformLayout ();
+           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = ( gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea() );
+           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea2 = ( gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea() );
+           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea3 = ( gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea() );
+           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea4 = ( gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea() );
+           System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea5 = ( gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea() );
+           System::Windows::Forms::DataVisualization::Charting::Legend^  legend1 = ( gcnew System::Windows::Forms::DataVisualization::Charting::Legend() );
+           System::Windows::Forms::DataVisualization::Charting::Legend^  legend2 = ( gcnew System::Windows::Forms::DataVisualization::Charting::Legend() );
+           System::Windows::Forms::DataVisualization::Charting::Legend^  legend3 = ( gcnew System::Windows::Forms::DataVisualization::Charting::Legend() );
+           System::Windows::Forms::DataVisualization::Charting::Legend^  legend4 = ( gcnew System::Windows::Forms::DataVisualization::Charting::Legend() );
+           System::Windows::Forms::DataVisualization::Charting::Legend^  legend5 = ( gcnew System::Windows::Forms::DataVisualization::Charting::Legend() );
+           this->chart1 = ( gcnew System::Windows::Forms::DataVisualization::Charting::Chart() );
+           this->buttonBeenden = ( gcnew System::Windows::Forms::Button() );
+           this->comboBoxZeitaufloesung = ( gcnew System::Windows::Forms::ComboBox() );
+           this->label1 = ( gcnew System::Windows::Forms::Label() );
+           this->buttonAusblenden = ( gcnew System::Windows::Forms::Button() );
+           this->checkBoxZeitraum = ( gcnew System::Windows::Forms::CheckBox() );
+           this->ctlEndDate = ( gcnew System::Windows::Forms::DateTimePicker() );
+           this->ctlStartDate = ( gcnew System::Windows::Forms::DateTimePicker() );
+           this->lblStartDateDisplay = ( gcnew System::Windows::Forms::Label() );
+           this->lblEndDateDisplay = ( gcnew System::Windows::Forms::Label() );
+           this->buttonExportZeitreihen = ( gcnew System::Windows::Forms::Button() );
+           this->saveFileDialogZeitreihen = ( gcnew System::Windows::Forms::SaveFileDialog() );
+           this->buttonJahreswerte = ( gcnew System::Windows::Forms::Button() );
+           ( cli::safe_cast<System::ComponentModel::ISupportInitialize^>( this->chart1 ) )->BeginInit();
+           this->SuspendLayout();
+           // 
+           // chart1
+           // 
+           this->chart1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( ( ( System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom )
+             | System::Windows::Forms::AnchorStyles::Left )
+             | System::Windows::Forms::AnchorStyles::Right ) );
+           this->chart1->BackColor = System::Drawing::Color::LightGoldenrodYellow;
+           chartArea1->AxisX->Crossing = 1.7976931348623157E+308;
+           chartArea1->AxisX->IsLabelAutoFit = false;
+           chartArea1->AxisX->IsMarginVisible = false;
+           chartArea1->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>( ( ( System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont )
+             | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap ) );
+           chartArea1->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+           chartArea1->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
+           chartArea1->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+           chartArea1->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+           chartArea1->AxisX->ScrollBar->IsPositionedInside = false;
+           chartArea1->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+           chartArea1->AxisX->ScrollBar->Size = 16;
+           chartArea1->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
+           chartArea1->AxisX->TitleFont = ( gcnew System::Drawing::Font( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
+           chartArea1->AxisY->IsLabelAutoFit = false;
+           chartArea1->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
+           chartArea1->AxisY->TitleFont = ( gcnew System::Drawing::Font( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+             static_cast<System::Byte>( 0 ) ) );
+           chartArea1->BackColor = System::Drawing::Color::FromArgb( static_cast<System::Int32>( static_cast<System::Byte>( 192 ) ), static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ),
+             static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ) );
+           chartArea1->Name = L"ChartArea1";
+           chartArea1->Visible = false;
+           chartArea2->AxisX->Crossing = 1.7976931348623157E+308;
+           chartArea2->AxisX->IsLabelAutoFit = false;
+           chartArea2->AxisX->IsMarginVisible = false;
+           chartArea2->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>( ( ( System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont )
+             | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap ) );
+           chartArea2->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+           chartArea2->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
+           chartArea2->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+           chartArea2->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+           chartArea2->AxisX->ScrollBar->IsPositionedInside = false;
+           chartArea2->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+           chartArea2->AxisX->ScrollBar->Size = 16;
+           chartArea2->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
+           chartArea2->AxisX->TitleFont = ( gcnew System::Drawing::Font( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
+           chartArea2->AxisY->IsLabelAutoFit = false;
+           chartArea2->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
+           chartArea2->AxisY->TitleFont = ( gcnew System::Drawing::Font( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
+           chartArea2->BackColor = System::Drawing::Color::FromArgb( static_cast<System::Int32>( static_cast<System::Byte>( 192 ) ), static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ),
+             static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ) );
+           chartArea2->Name = L"ChartArea2";
+           chartArea2->Visible = false;
+           chartArea3->AxisX->Crossing = 1.7976931348623157E+308;
+           chartArea3->AxisX->IsLabelAutoFit = false;
+           chartArea3->AxisX->IsMarginVisible = false;
+           chartArea3->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>( ( ( System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont )
+             | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap ) );
+           chartArea3->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+           chartArea3->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
+           chartArea3->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+           chartArea3->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+           chartArea3->AxisX->ScrollBar->IsPositionedInside = false;
+           chartArea3->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+           chartArea3->AxisX->ScrollBar->Size = 16;
+           chartArea3->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
+           chartArea3->AxisX->TitleFont = ( gcnew System::Drawing::Font( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
+           chartArea3->AxisY->IsLabelAutoFit = false;
+           chartArea3->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
+           chartArea3->AxisY->TitleFont = ( gcnew System::Drawing::Font( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
+           chartArea3->BackColor = System::Drawing::Color::FromArgb( static_cast<System::Int32>( static_cast<System::Byte>( 192 ) ), static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ),
+             static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ) );
+           chartArea3->Name = L"ChartArea3";
+           chartArea3->Visible = false;
+           chartArea4->AxisX->Crossing = 1.7976931348623157E+308;
+           chartArea4->AxisX->IsLabelAutoFit = false;
+           chartArea4->AxisX->IsMarginVisible = false;
+           chartArea4->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>( ( ( System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont )
+             | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap ) );
+           chartArea4->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+           chartArea4->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
+           chartArea4->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+           chartArea4->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+           chartArea4->AxisX->ScrollBar->IsPositionedInside = false;
+           chartArea4->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+           chartArea4->AxisX->ScrollBar->Size = 16;
+           chartArea4->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
+           chartArea4->AxisX->TitleFont = ( gcnew System::Drawing::Font( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
+           chartArea4->AxisY->IsLabelAutoFit = false;
+           chartArea4->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
+           chartArea4->AxisY->TitleFont = ( gcnew System::Drawing::Font( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
+           chartArea4->BackColor = System::Drawing::Color::FromArgb( static_cast<System::Int32>( static_cast<System::Byte>( 192 ) ), static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ),
+             static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ) );
+           chartArea4->Name = L"ChartArea4";
+           chartArea4->Visible = false;
+           chartArea5->AxisX->Crossing = 1.7976931348623157E+308;
+           chartArea5->AxisX->IsLabelAutoFit = false;
+           chartArea5->AxisX->IsMarginVisible = false;
+           chartArea5->AxisX->LabelAutoFitStyle = static_cast<System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles>( ( ( System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::IncreaseFont | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::DecreaseFont )
+             | System::Windows::Forms::DataVisualization::Charting::LabelAutoFitStyles::WordWrap ) );
+           chartArea5->AxisX->MajorGrid->LineColor = System::Drawing::Color::DeepSkyBlue;
+           chartArea5->AxisX->MajorGrid->LineDashStyle = System::Windows::Forms::DataVisualization::Charting::ChartDashStyle::DashDot;
+           chartArea5->AxisX->ScrollBar->BackColor = System::Drawing::SystemColors::ButtonFace;
+           chartArea5->AxisX->ScrollBar->ButtonColor = System::Drawing::SystemColors::ScrollBar;
+           chartArea5->AxisX->ScrollBar->IsPositionedInside = false;
+           chartArea5->AxisX->ScrollBar->LineColor = System::Drawing::SystemColors::ActiveCaptionText;
+           chartArea5->AxisX->ScrollBar->Size = 16;
+           chartArea5->AxisX->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Horizontal;
+           chartArea5->AxisX->TitleFont = ( gcnew System::Drawing::Font( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
+           chartArea5->AxisY->IsLabelAutoFit = false;
+           chartArea5->AxisY->TextOrientation = System::Windows::Forms::DataVisualization::Charting::TextOrientation::Rotated270;
+           chartArea5->AxisY->TitleFont = ( gcnew System::Drawing::Font( L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold ) );
+           chartArea5->BackColor = System::Drawing::Color::FromArgb( static_cast<System::Int32>( static_cast<System::Byte>( 192 ) ), static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ),
+             static_cast<System::Int32>( static_cast<System::Byte>( 255 ) ) );
+           chartArea5->Name = L"ChartArea5";
+           chartArea5->Visible = false;
+           this->chart1->ChartAreas->Add( chartArea1 );
+           this->chart1->ChartAreas->Add( chartArea2 );
+           this->chart1->ChartAreas->Add( chartArea3 );
+           this->chart1->ChartAreas->Add( chartArea4 );
+           this->chart1->ChartAreas->Add( chartArea5 );
+           legend1->DockedToChartArea = L"ChartArea1";
+           legend1->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+           legend1->IsDockedInsideChartArea = false;
+           legend1->Name = L"Legend1";
+           legend2->DockedToChartArea = L"ChartArea2";
+           legend2->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+           legend2->IsDockedInsideChartArea = false;
+           legend2->Name = L"Legend2";
+           legend3->DockedToChartArea = L"ChartArea3";
+           legend3->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+           legend3->IsDockedInsideChartArea = false;
+           legend3->Name = L"Legend3";
+           legend4->DockedToChartArea = L"ChartArea4";
+           legend4->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+           legend4->IsDockedInsideChartArea = false;
+           legend4->Name = L"Legend4";
+           legend5->DockedToChartArea = L"ChartArea5";
+           legend5->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Top;
+           legend5->IsDockedInsideChartArea = false;
+           legend5->Name = L"Legend5";
+           this->chart1->Legends->Add( legend1 );
+           this->chart1->Legends->Add( legend2 );
+           this->chart1->Legends->Add( legend3 );
+           this->chart1->Legends->Add( legend4 );
+           this->chart1->Legends->Add( legend5 );
+           this->chart1->Location = System::Drawing::Point( 0, 0 );
+           this->chart1->Margin = System::Windows::Forms::Padding( 0 );
+           this->chart1->Name = L"chart1";
+           this->chart1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::Excel;
+           this->chart1->Size = System::Drawing::Size( 868, 598 );
+           this->chart1->TabIndex = 0;
+           this->chart1->Text = L"chart1";
+           this->chart1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler( this, &Diagramm::chart1_KeyDown );
+           this->chart1->MouseClick += gcnew System::Windows::Forms::MouseEventHandler( this, &Diagramm::chart1_MouseClick );
+           this->chart1->PreviewKeyDown += gcnew System::Windows::Forms::PreviewKeyDownEventHandler( this, &Diagramm::chart1_PreviewKeyDown );
+           // 
+           // buttonBeenden
+           // 
+           this->buttonBeenden->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right ) );
+           this->buttonBeenden->DialogResult = System::Windows::Forms::DialogResult::Cancel;
+           this->buttonBeenden->Location = System::Drawing::Point( 730, 619 );
+           this->buttonBeenden->Name = L"buttonBeenden";
+           this->buttonBeenden->Size = System::Drawing::Size( 120, 37 );
+           this->buttonBeenden->TabIndex = 1;
+           this->buttonBeenden->Text = L"Schließen";
+           this->buttonBeenden->UseVisualStyleBackColor = true;
+           this->buttonBeenden->Click += gcnew System::EventHandler( this, &Diagramm::buttonBeenden_Click );
+           // 
+           // comboBoxZeitaufloesung
+           // 
+           this->comboBoxZeitaufloesung->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
+           this->comboBoxZeitaufloesung->FormattingEnabled = true;
+           this->comboBoxZeitaufloesung->Items->AddRange( gcnew cli::array< System::Object^  >( 4 ) { L"Stunden", L"Tage", L"Wochen", L"Monate" } );
+           this->comboBoxZeitaufloesung->Location = System::Drawing::Point( 12, 619 );
+           this->comboBoxZeitaufloesung->Name = L"comboBoxZeitaufloesung";
+           this->comboBoxZeitaufloesung->Size = System::Drawing::Size( 121, 21 );
+           this->comboBoxZeitaufloesung->TabIndex = 2;
+           this->comboBoxZeitaufloesung->SelectedIndexChanged += gcnew System::EventHandler( this, &Diagramm::comboBoxZeitaufloesung_SelectedIndexChanged );
+           // 
+           // label1
+           // 
+           this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
+           this->label1->AutoSize = true;
+           this->label1->Location = System::Drawing::Point( 9, 643 );
+           this->label1->Name = L"label1";
+           this->label1->Size = System::Drawing::Size( 97, 13 );
+           this->label1->TabIndex = 3;
+           this->label1->Text = L"Zeitliche Auflösung";
+           // 
+           // buttonAusblenden
+           // 
+           this->buttonAusblenden->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
+           this->buttonAusblenden->Location = System::Drawing::Point( 150, 619 );
+           this->buttonAusblenden->Name = L"buttonAusblenden";
+           this->buttonAusblenden->Size = System::Drawing::Size( 51, 37 );
+           this->buttonAusblenden->TabIndex = 13;
+           this->buttonAusblenden->Text = L"Einstellungen";
+           this->buttonAusblenden->UseVisualStyleBackColor = true;
+           this->buttonAusblenden->Click += gcnew System::EventHandler( this, &Diagramm::buttonAusblenden_Click );
+           // 
+           // checkBoxZeitraum
+           // 
+           this->checkBoxZeitraum->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
+           this->checkBoxZeitraum->AutoSize = true;
+           this->checkBoxZeitraum->Checked = true;
+           this->checkBoxZeitraum->CheckState = System::Windows::Forms::CheckState::Checked;
+           this->checkBoxZeitraum->Location = System::Drawing::Point( 289, 630 );
+           this->checkBoxZeitraum->Margin = System::Windows::Forms::Padding( 2 );
+           this->checkBoxZeitraum->Name = L"checkBoxZeitraum";
+           this->checkBoxZeitraum->Size = System::Drawing::Size( 67, 17 );
+           this->checkBoxZeitraum->TabIndex = 14;
+           this->checkBoxZeitraum->Text = L"Zeitraum";
+           this->checkBoxZeitraum->UseVisualStyleBackColor = true;
+           this->checkBoxZeitraum->CheckedChanged += gcnew System::EventHandler( this, &Diagramm::checkBoxZeitraum_CheckedChanged );
+           // 
+           // ctlEndDate
+           // 
+           this->ctlEndDate->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
+           this->ctlEndDate->Format = System::Windows::Forms::DateTimePickerFormat::Short;
+           this->ctlEndDate->Location = System::Drawing::Point( 460, 619 );
+           this->ctlEndDate->Name = L"ctlEndDate";
+           this->ctlEndDate->Size = System::Drawing::Size( 84, 20 );
+           this->ctlEndDate->TabIndex = 27;
+           this->ctlEndDate->ValueChanged += gcnew System::EventHandler( this, &Diagramm::ctlStartEndDate_ValueChanged );
+           // 
+           // ctlStartDate
+           // 
+           this->ctlStartDate->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
+           this->ctlStartDate->Format = System::Windows::Forms::DateTimePickerFormat::Short;
+           this->ctlStartDate->Location = System::Drawing::Point( 370, 619 );
+           this->ctlStartDate->Name = L"ctlStartDate";
+           this->ctlStartDate->Size = System::Drawing::Size( 84, 20 );
+           this->ctlStartDate->TabIndex = 26;
+           this->ctlStartDate->ValueChanged += gcnew System::EventHandler( this, &Diagramm::ctlStartEndDate_ValueChanged );
+           // 
+           // lblStartDateDisplay
+           // 
+           this->lblStartDateDisplay->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
+           this->lblStartDateDisplay->AutoSize = true;
+           this->lblStartDateDisplay->Location = System::Drawing::Point( 370, 643 );
+           this->lblStartDateDisplay->Name = L"lblStartDateDisplay";
+           this->lblStartDateDisplay->Size = System::Drawing::Size( 75, 13 );
+           this->lblStartDateDisplay->TabIndex = 28;
+           this->lblStartDateDisplay->Text = L"Anfangsdatum";
+           // 
+           // lblEndDateDisplay
+           // 
+           this->lblEndDateDisplay->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
+           this->lblEndDateDisplay->AutoSize = true;
+           this->lblEndDateDisplay->Location = System::Drawing::Point( 460, 643 );
+           this->lblEndDateDisplay->Name = L"lblEndDateDisplay";
+           this->lblEndDateDisplay->Size = System::Drawing::Size( 55, 13 );
+           this->lblEndDateDisplay->TabIndex = 29;
+           this->lblEndDateDisplay->Text = L"Enddatum";
+           // 
+           // buttonExportZeitreihen
+           // 
+           this->buttonExportZeitreihen->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
+           this->buttonExportZeitreihen->Location = System::Drawing::Point( 581, 619 );
+           this->buttonExportZeitreihen->Name = L"buttonExportZeitreihen";
+           this->buttonExportZeitreihen->Size = System::Drawing::Size( 120, 37 );
+           this->buttonExportZeitreihen->TabIndex = 26;
+           this->buttonExportZeitreihen->Text = L"Export Zeitreihen";
+           this->buttonExportZeitreihen->UseVisualStyleBackColor = true;
+           this->buttonExportZeitreihen->Click += gcnew System::EventHandler( this, &Diagramm::buttonExportZeitreihen_Click );
+           // 
+           // saveFileDialogZeitreihen
+           // 
+           this->saveFileDialogZeitreihen->Filter = L"(*.csv)|*.csv";
+           this->saveFileDialogZeitreihen->Title = L"Export der gewählten Zeitreihen ";
+           // 
+           // buttonJahreswerte
+           // 
+           this->buttonJahreswerte->Location = System::Drawing::Point( 209, 619 );
+           this->buttonJahreswerte->Name = L"buttonJahreswerte";
+           this->buttonJahreswerte->Size = System::Drawing::Size( 56, 37 );
+           this->buttonJahreswerte->TabIndex = 30;
+           this->buttonJahreswerte->Text = L"Jahres werte";
+           this->buttonJahreswerte->UseVisualStyleBackColor = true;
+           this->buttonJahreswerte->Click += gcnew System::EventHandler( this, &Diagramm::buttonJahreswerte_Click );
+           // 
+           // Diagramm
+           // 
+           this->AutoScaleDimensions = System::Drawing::SizeF( 6, 13 );
+           this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+           this->AutoScroll = true;
+           this->CancelButton = this->buttonBeenden;
+           this->ClientSize = System::Drawing::Size( 869, 676 );
+           this->Controls->Add( this->buttonJahreswerte );
+           this->Controls->Add( this->lblEndDateDisplay );
+           this->Controls->Add( this->lblStartDateDisplay );
+           this->Controls->Add( this->ctlEndDate );
+           this->Controls->Add( this->ctlStartDate );
+           this->Controls->Add( this->checkBoxZeitraum );
+           this->Controls->Add( this->buttonAusblenden );
+           this->Controls->Add( this->label1 );
+           this->Controls->Add( this->comboBoxZeitaufloesung );
+           this->Controls->Add( this->buttonExportZeitreihen );
+           this->Controls->Add( this->buttonBeenden );
+           this->Controls->Add( this->chart1 );
+           this->KeyPreview = true;
+           this->Name = L"Diagramm";
+           this->Text = L"Diagramm";
+           this->Shown += gcnew System::EventHandler( this, &Diagramm::Diagramm_Shown );
+           this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler( this, &Diagramm::Diagramm_KeyDown );
+           this->MouseWheel += gcnew System::Windows::Forms::MouseEventHandler( this, &Diagramm::Diagramm_MouseWheel );
+           ( cli::safe_cast<System::ComponentModel::ISupportInitialize^>( this->chart1 ) )->EndInit();
+           this->ResumeLayout( false );
+           this->PerformLayout();
 
-				 }
+         }
 #pragma endregion
 
 #pragma region Public Accessors
@@ -575,6 +592,7 @@ public: System::Void setValues(DataValues ^ values, String ^  theme, String ^ uo
   m_chartList->Add(chartNum);
   m_showSeries->Add(showSerie);
   m_seriesText->Add(theme);
+  m_seriesUOM->Add ( uom );
 
   m_seriesAnz++;
   Series ^  series = gcnew Series();
@@ -1336,6 +1354,37 @@ private: System::Void buttonExportZeitreihen_Click(System::Object^  sender, Syst
   }
   pWriter->Flush();
   pWriter->Close();
+}
+
+private: System::Void buttonJahreswerte_Click( System::Object^  sender, System::EventArgs^  e )
+{
+  List<double> ^ jahreswerte = gcnew List<double>;
+
+  for ( int i = 0; i < m_seriesAnz; i++ )
+  {
+    double jahreswert = 0.0;
+    int anz = 0;
+    DataValues ^ values =  m_values[i];
+
+    for ( int j = 0; j < values->Count; j++ )
+    {
+      if ( values[j] != m_missingValue )
+      {
+        jahreswert = jahreswert + values[j];
+        anz++;
+      }
+    }
+
+    if ( m_aggregationTyp[m_chartList[i]] == AGGREGATION_TYP::MITTELWERT && anz > 0 )
+      jahreswert = jahreswert / anz;
+    jahreswerte->Add ( jahreswert );
+
+  }
+
+  Jahreswerte ^ pJahreswerte = gcnew Jahreswerte ( jahreswerte, m_seriesText, m_seriesUOM );
+  pJahreswerte->ShowDialog();
+
+  return;
 }
 
 #pragma endregion

@@ -33,6 +33,9 @@
     <ClCompile Include="AusblendenZeitreihen.cpp">
       <Filter>Headerdateien</Filter>
     </ClCompile>
+    <ClCompile Include="Jahreswerte.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -45,6 +48,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="AusblendenZeitreihen.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Jahreswerte.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

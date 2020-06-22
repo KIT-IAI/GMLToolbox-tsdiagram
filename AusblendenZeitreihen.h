@@ -22,7 +22,7 @@
       DataGridViewRow          ^ row;
       DataGridViewTextBoxCell  ^ textCell;
       DataGridViewCheckBoxCell ^ checkBoxCell; 
-			DataGridViewButtonCell   ^ buttonCell; 
+//			DataGridViewButtonCell   ^ buttonCell; 
 			DataGridViewComboBoxCell ^ comboBoxCell; 
 			int                        i;
 			
