@@ -1,9 +1,11 @@
 # TimeSeries Diagram
 
-## Changes
+## Description
+This software is one module of the [GML-ToolboxApp](..\README.md). It function is to visualize yearly time series of scalar values in diagrams.
 
-- 29.11.2018  
-  Added DateTimePicker controls for selection of the displayed time range
 
-- (up to) 26.10.2018  
-  Adopted version from J. Benner
+## License
+The software runs under [Apache 2.0 license](LICENSE.md)
+
+
+**Author**: Dr. Joachim Benner
