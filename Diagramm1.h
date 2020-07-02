@@ -443,6 +443,7 @@ private: System::Windows::Forms::Button^  buttonBeenden;
            // 
            // buttonJahreswerte
            // 
+           this->buttonJahreswerte->Anchor = static_cast<System::Windows::Forms::AnchorStyles>( ( System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left ) );
            this->buttonJahreswerte->Location = System::Drawing::Point( 209, 619 );
            this->buttonJahreswerte->Name = L"buttonJahreswerte";
            this->buttonJahreswerte->Size = System::Drawing::Size( 56, 37 );
