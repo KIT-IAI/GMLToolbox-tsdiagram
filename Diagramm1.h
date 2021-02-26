@@ -53,7 +53,7 @@ public:
     m_showSeries   = gcnew List<bool>;
     m_seriesText   = gcnew List<String ^>;
     m_seriesUOM    = gcnew List<String ^>;
-		m_liniendicken = gcnew List<double>;
+		m_liniendicken = gcnew List<int>;
 		m_farben       = gcnew List<System::Drawing::Color>;
 		m_lineStyles   = gcnew List<ChartDashStyle>;
 
@@ -111,7 +111,7 @@ private:
   List<bool>                   ^ m_showSeries;	   // Legt fest, ob eine bestimmte Zeitreihe im zug. Chart angezeit wird
   List<String^>                ^ m_seriesText;	   // Den einzelnen Zeitreihen zugeordnete Beschreibungstexte
   List<String^>                ^ m_seriesUOM;      // Den einzelnen Zeitreihen zugeordnete UOM-Strings
-	List<double>                 ^ m_liniendicken;   // Liniendicke der einzelnen Zeitreihen
+	List<int>                    ^ m_liniendicken;   // Liniendicke der einzelnen Zeitreihen
 	List<ChartDashStyle>         ^ m_lineStyles;     // Linienstil der einzelnen Zeitreihen 
 	List<System::Drawing::Color> ^ m_farben;         // Aktuelle Farben der einzelnen Zeitreihen
 	List<System::Drawing::Color> ^ m_standardFarben; // Standardfarben, die den Zeitreihen automatisch zugewiesen werden

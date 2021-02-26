@@ -16,7 +16,7 @@
 	public ref class AusblendenZeitreihen : public System::Windows::Forms::Form
 	{
 	public:
-		AusblendenZeitreihen( List<String^> ^vThemen, List<bool> ^ vAnzeigen, List<double> ^vLiniendicken, 
+		AusblendenZeitreihen( List<String^> ^vThemen, List<bool> ^ vAnzeigen, List<int> ^vLiniendicken, 
 							List<System::Drawing::Color> ^ vFarben, List<ChartDashStyle> ^ vLineStyles )
 		{
       DataGridViewRow          ^ row;
@@ -159,7 +159,7 @@
 
     List<bool>									 m_vAnzeigen;
 		List<String^>								 m_vThemen;
-		List<double>								 m_vLiniendicken;
+		List<int>								 m_vLiniendicken;
 		List<System::Drawing::Color> m_vFarben;
 		List<ChartDashStyle>         m_vLineStyles;
     int													 m_anz;
@@ -255,7 +255,7 @@
 
 							textBoxCell =  dynamic_cast<DataGridViewTextBoxCell^>(row->Cells[2]);
 							STR = dynamic_cast<String^>(textBoxCell->Value);
-							m_vLiniendicken[i] = Convert::ToDouble ( STR );
+							m_vLiniendicken[i] = Convert::ToInt32(STR);
 
 							textBoxCell = dynamic_cast<DataGridViewTextBoxCell^>(row->Cells[3]);
 							System::Drawing::Color color = textBoxCell->Style->BackColor;
@@ -297,7 +297,7 @@ public: System::Void getResultThemen( List<String^> ^ result )
 						result[i] = m_vThemen[i];
 				}		
 
-public: System::Void getResultLiniendicke( List<double> ^ result )
+public: System::Void getResultLiniendicke( List<int> ^ result )
 				{
 					for ( int i = 0; i < m_anz; i++)
 						result[i] = m_vLiniendicken[i];
