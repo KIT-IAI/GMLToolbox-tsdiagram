@@ -697,7 +697,7 @@ private: System::Void FillDataSeries()
     series->Enabled         = m_showSeries[i];
 		series->LegendText      = m_seriesText[i];
 		series->Color           = m_farben[i];
-		series->BorderWidth     = m_liniendicken[i];
+		series->BorderWidth     = (int)m_liniendicken[i];
 		series->BorderDashStyle = m_lineStyles[i];
 
 
